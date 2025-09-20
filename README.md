@@ -32,7 +32,7 @@ This repository contains the documentation for Evgeny Tomenko's CakePHP plugins,
 
 ## GitHub Pages Deployment
 
-This site is automatically deployed to GitHub Pages when changes are pushed to the `master` branch.
+This site is automatically deployed to GitHub Pages when changes are pushed to the `main` branch.
 
 ### Setup Instructions
 
@@ -42,9 +42,9 @@ This site is automatically deployed to GitHub Pages when changes are pushed to t
    - Under "Source", select "GitHub Actions"
 
 2. **Repository Structure:**
-   - The site will be deployed from the `master` branch
+   - The site will be deployed from the `main` branch
    - The workflow is located at `.github/workflows/deploy.yml`
-   - The built site will be available at `https://yourusername.github.io/your-repo-name`
+   - The built site will be available at `https://skie.github.io/docs-test`
 
 3. **Custom Domain (Optional):**
    - Add a `CNAME` file to the `docs/public/` directory with your domain
