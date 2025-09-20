@@ -4,6 +4,7 @@ import { versionReplacer } from './plugins/version-replacer.js'
 
 export default defineConfig({
     srcDir: 'docs',
+    base: '/', // Change this to '/your-repo-name/' if deploying to a subdirectory
     title: 'Evgeny Tomenko - CakePHP Plugins',
     description: 'Professional CakePHP plugins by Evgeny Tomenko - Admin, RuleFlow, Scheduling, and SignalHandler plugins',
     ignoreDeadLinks: true,
