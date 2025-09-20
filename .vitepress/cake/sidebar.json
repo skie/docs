@@ -1,0 +1,48 @@
+{
+  "/": [
+    {
+      "text": "Evgeny's CakePHP Plugins",
+      "collapsed": false,
+      "items": [
+        { "text": "Home", "link": "/" }
+      ]
+    }
+  ],
+  "/RuleFlow/": [
+    {
+      "text": "RuleFlow Plugin",
+      "collapsed": false,
+      "items": [
+        { "text": "Overview", "link": "/RuleFlow/" },
+        { "text": "Custom Rules Guide", "link": "/RuleFlow/custom-rules-guide" },
+        { "text": "JSON Logic Operations", "link": "/RuleFlow/JsonLogic-Operations-Reference" },
+        { "text": "Regex Compatibility", "link": "/RuleFlow/regex-compatibility" }
+      ]
+    }
+  ],
+  "/Scheduling/": [
+    {
+      "text": "Scheduling Plugin",
+      "collapsed": false,
+      "items": [
+        { "text": "Home", "link": "/Scheduling/" },
+        { "text": "Installation", "link": "/Scheduling/Installation" },
+        { "text": "Integration", "link": "/Scheduling/Integration" },
+        { "text": "API Reference", "link": "/Scheduling/API-Reference" },
+        { "text": "Versions", "link": "/Scheduling/Versions" }
+      ]
+    }
+  ],
+  "/SignalHandler/": [
+    {
+      "text": "SignalHandler Plugin",
+      "collapsed": false,
+      "items": [
+        { "text": "Home", "link": "/SignalHandler/" },
+        { "text": "Installation", "link": "/SignalHandler/Installation" },
+        { "text": "Integration", "link": "/SignalHandler/Integration" },
+        { "text": "API Reference", "link": "/SignalHandler/API-Reference" }
+      ]
+    }
+  ]
+}
