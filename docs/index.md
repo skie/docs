@@ -24,6 +24,15 @@ features:
     details: Cross-platform signal handling for CakePHP console commands. Enable graceful termination of long-running commands with zero external dependencies and full event system integration.
     link: /SignalHandler/
   - title: Rhythm Plugin
-    details: Real-time application performance monitoring for CakePHP 5.x applications with comprehensive metric collection, storage, and visualization.
+    details: Real-time application performance monitoring for CakePHP applications with comprehensive metric collection, storage, and visualization.
     link: /Rhythm/
+  - title: BlazeCast Plugin
+    details: Real-time web socket server built on top of CakePHP applications.
+    link: /BlazeCast/
+  - title: Monitor Plugin
+    details: Real-time supervised process management, queues and jobs monitoring for CakePHP applications.
+    link: /Monitor/
+  - title: PlumSearch Plugin
+    details: Search and filtering plugin for CakePHP applications.
+    link: /PlumSearch/
 ---

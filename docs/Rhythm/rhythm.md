@@ -14,7 +14,7 @@ For in-depth debugging of individual events, check out [CakePHP Debug Kit](https
 You may install Rhythm using the Composer package manager:
 
 ```shell
-composer require your-vendor/rhythm
+composer require skie/rhythm
 ```
 
 Next, you should run the `migrate` command in order to create the tables needed to store Rhythm's data:
@@ -76,6 +76,8 @@ Most widgets also accept an `expand` configuration to show the full widget inste
 
 #### Server State
 
+![Server State Widget](images/server-state.png)
+
 The `server-state` widget displays system resource usage for all servers running the `rhythm:check` command. Please refer to the documentation regarding the [servers recorder](#servers-recorder) for more information on system resource reporting.
 
 If you replace a server in your infrastructure, you may wish to stop displaying the inactive server in the Rhythm dashboard after a given duration. You may accomplish this using the `ignore-after` configuration, which accepts the number of seconds after which inactive servers should be removed from the Rhythm dashboard:
@@ -103,13 +105,19 @@ To learn how to customize how Rhythm retrieves and displays user information, co
 
 #### Exceptions
 
+![Exceptions Widget](images/exceptions.png)
+
 The `exceptions` widget shows the frequency and recency of exceptions occurring in your application. By default, exceptions are grouped based on the exception class and location where it occurred. See the [exceptions recorder](#exceptions-recorder) documentation for more information.
 
 #### Queues
 
+![Queues Widget](images/queues.png)
+
 The `queues` widget shows the throughput of the queues in your application, including the number of jobs queued, processing, processed, released, and failed. See the [queues recorder](#queues-recorder) documentation for more information.
 
 #### Slow Requests
+
+![Slow Requests Widget](images/slow-requests.png)
 
 The `slow-requests` widget shows incoming requests to your application that exceed the configured threshold, which is 10ms by default. See the [slow requests recorder](#slow-requests-recorder) documentation for more information.
 
@@ -118,6 +126,8 @@ The `slow-requests` widget shows incoming requests to your application that exce
 The `slow-jobs` widget shows the queued jobs in your application that exceed the configured threshold, which is 10ms by default. See the [slow jobs recorder](#slow-jobs-recorder) documentation for more information.
 
 #### Slow Queries
+
+![Slow Queries Widget](images/slow-queries.png)
 
 The `slow-queries` widget shows the database queries in your application that exceed the configured threshold, which is 10ms by default.
 
@@ -142,6 +152,22 @@ By default, entries will be grouped by the full URL. However, you may wish to no
 The `cache` widget shows the cache hit and miss statistics for your application, both globally and for individual keys.
 
 By default, entries will be grouped by key. However, you may wish to normalize or group similar keys using regular expressions. See the [cache interactions recorder](#cache-interactions-recorder) documentation for more information.
+
+#### App Info
+
+![App Info Widget](images/app-info.png)
+
+The `app-info` widget displays comprehensive application information including CakePHP version, PHP version, debug mode status, system configuration, and database information. This widget provides a quick overview of your application's environment and configuration.
+
+The widget shows application name and CakePHP version, PHP version and Composer version, debug mode status and timezone settings, server software and memory limits, database type and connection information, and application URL and file paths.
+
+#### Git Status
+
+![Git Status Widget](images/git-status.png)
+
+The `git-status` widget displays current Git repository information including the active branch, recent commits, and repository status. This widget helps track deployment status and recent changes.
+
+The widget shows current Git branch, recent commits with author, date, and message, commit status classification (feature, fix, docs, etc.), repository status (clean, modified, error), ticket numbers and merge information, and commit tags and metadata.
 
 #### Redis Monitor
 
@@ -385,6 +411,14 @@ You may configure the monitoring interval, database connections, and which metri
 ],
 ```
 
+#### Git
+
+The `Git` recorder captures Git repository information including current branch, recent commits, and repository status for display on the [Git Status](#git-status-widget) widget.
+
+The recorder automatically detects Git repositories by searching the current directory and parent directories. It captures current branch name, recent commits with metadata (author, date, message), commit classification (feature, fix, docs, test, etc.), repository status (clean, modified, error), ticket numbers and merge information, and commit tags and version information.
+
+The recorder uses throttling to prevent excessive Git operations and runs every 60 seconds by default. It requires Git to be available in the system PATH and will gracefully handle cases where Git is not available or the directory is not a Git repository.
+
 ### Filtering
 
 As we have seen, many [recorders](#recorders) offer the ability to, via configuration, "ignore" incoming entries based on their value, such as a request's URL. But, sometimes it may be useful to filter out records based on other factors, such as the currently authenticated user. To filter out these records, you may pass a closure to Rhythm's `filter` method. Typically, the `filter` method should be invoked within the `bootstrap` method of your application's `Application.php`:
@@ -568,7 +602,6 @@ class TopSellers extends BaseWidget
 ```
 
 When this widget is included on the dashboard, Rhythm will automatically include the contents of these files within `<style>` tags so they do not need to be published to the `webroot` directory.
-
 
 ### Data Capture and Aggregation
 

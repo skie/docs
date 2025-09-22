@@ -325,21 +325,39 @@ Identifies slow HTTP requests based on configurable thresholds.
 ### OutgoingRequestRecorder
 Monitors external API calls and HTTP client performance with automatic URI grouping.
 
+### GitRecorder
+Captures Git repository information including current branch, recent commits, and repository status. Automatically detects Git repositories and provides commit classification and metadata tracking.
+
 ## Available Widgets
 
 ### ServerStateWidget
+
+![Server State Widget](images/server-state.png)
+
 Shows real-time server performance with CPU, memory, and disk usage. Displays sparkline charts and status indicators for each server. Shows online/offline status.
 
 ### QueuesWidget
+
+![Queues Widget](images/queues.png)
+
 Shows job queues with charts showing job states (queued, processing, processed, failed). Shows queue depth, health, and wait times with success rate tracking.
 
 ### SlowQueriesWidget
+
+![Slow Queries Widget](images/slow-queries.png)
+
 Shows slow database queries with execution times and locations. Shows top 10 slowest queries with sorting options to help find performance issues.
 
 ### ExceptionsWidget
+
+![Exceptions Widget](images/exceptions.png)
+
 Shows application errors and exceptions. Groups by error type and shows frequency counts with sorting by frequency or latest occurrence.
 
 ### SlowRequestsWidget
+
+![Slow Requests Widget](images/slow-requests.png)
+
 Shows slow HTTP requests with method, path, and response times. Displays top 10 slowest requests with status codes to identify web performance issues.
 
 ### SlowOutgoingRequestsWidget
@@ -353,6 +371,18 @@ Shows cache hit rates and performance. Shows hit/miss counts and efficiency perc
 
 ### UsageWidget
 Displays system resource usage including memory, response times, and request counts. Shows status indicators for each metric.
+
+### AppInfoWidget
+
+![App Info Widget](images/app-info.png)
+
+Displays comprehensive application information including CakePHP version, PHP version, debug mode status, system configuration, and database information. Provides a quick overview of your application's environment and configuration with detailed system metrics.
+
+### GitWidget
+
+![Git Status Widget](images/git-status.png)
+
+Displays current Git repository information including the active branch, recent commits, and repository status. Helps track deployment status and recent changes with commit classification and metadata.
 
 ## Command Line Tools
 
