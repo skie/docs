@@ -1,5 +1,29 @@
 # Custom Rules and Functions Guide
 
+## Table of Contents
+
+1. [Overview](#overview)
+2. [Custom Rules (Server-side PHP)](#custom-rules-server-side-php)
+   - [Creating a Custom Rule](#creating-a-custom-rule)
+   - [Built-in Custom Rules](#built-in-custom-rules)
+     - [LengthRule](#lengthrule)
+     - [MatchRule (Regex)](#matchrule-regex)
+3. [Custom Functions (Client-side JavaScript)](#custom-functions-client-side-javascript)
+   - [Method 1: Global Registration](#method-1-global-registration-before-library-load)
+   - [Method 2: Runtime Registration](#method-2-runtime-registration)
+   - [Method 3: Configuration-based](#method-3-configuration-based)
+4. [Usage in Forms](#usage-in-forms)
+   - [Server-side (Controller)](#server-side-controller)
+   - [Client-side (HTML)](#client-side-html)
+5. [Library Control](#library-control)
+   - [Disable Auto-initialization](#disable-auto-initialization)
+   - [Completely Disable](#completely-disable)
+6. [Common Patterns](#common-patterns)
+   - [Email Validation](#email-validation)
+   - [Password Strength](#password-strength)
+   - [Phone Number](#phone-number)
+
+
 ## Overview
 
 This guide explains how to add custom validation rules and functions to the RuleFlow plugin.

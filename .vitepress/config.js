@@ -5,8 +5,9 @@ import { mermaidPlugin } from './plugins/mermaid-simple.js'
 
 export default defineConfig({
     srcDir: 'docs',
-    // base: '/docs-test/', // Set to your repository name for GitHub Pages
-    base: '/', // Set to your repository name for GitHub Pages
+    base: '/docs-test/', // Set to your repository name for GitHub Pages
+    // base: '/docs/', // Set to your repository name for GitHub Pages
+    // base: '/', // Set to your repository name for GitHub Pages
     title: 'Evgeny Tomenko - CakePHP Plugins',
     description: 'Professional CakePHP plugins by Evgeny Tomenko - Admin, RuleFlow, Scheduling, and SignalHandler plugins',
     ignoreDeadLinks: true,
@@ -164,69 +165,49 @@ export default defineConfig({
         logo: '/logo.svg',
         // start-sidebar
         sidebar: {
-             "/": [
-                 {
-                     "text": "Evgeny's CakePHP Plugins",
-                     "collapsed": false,
-                     "items": [
-                         { "text": "Home", "link": "/" },
-                         { "text": "Mermaid Test", "link": "/mermaid-test" }
-                     ]
-                 }
-             ],
-            "/BlazeCast/": [
+            "/": [
                 {
-                    "text": "BlazeCast Plugin",
+                    "text": "Evgeny's CakePHP Plugins",
                     "collapsed": false,
                     "items": [
-                        { "text": "Authentication Authorization Guide", "link": "/BlazeCast/authentication-authorization-guide" },
-                        { "text": "Broadcasting Events", "link": "/BlazeCast/broadcasting-events" },
-                        { "text": "Built In Authenticator", "link": "/BlazeCast/built-in-authenticator" },
-                        { "text": "Channels", "link": "/BlazeCast/channels" },
-                        { "text": "Http Api Routes Analysis", "link": "/BlazeCast/http-api-routes-analysis" },
-                        { "text": "HTTP Vs WebSocket Server", "link": "/BlazeCast/HTTP-vs-WebSocket-Server" },
-                        { "text": "HTTP WebSocket Server", "link": "/BlazeCast/HTTP-WebSocket-Server" },
-                        { "text": "Implementation Guide", "link": "/BlazeCast/implementation-guide" },
-                        { "text": "Loader Configuration Guide", "link": "/BlazeCast/loader-configuration-guide" },
-                        { "text": "Pulse Integration", "link": "/BlazeCast/pulse-integration" },
-                        { "text": "Queues", "link": "/BlazeCast/queues" },
-                        { "text": "Quick Fix", "link": "/BlazeCast/quick-fix" },
-                        { "text": "Rate Limits", "link": "/BlazeCast/rate-limits" },
-                        { "text": "Simple Configuration", "link": "/BlazeCast/simple-configuration" },
-                        { "text": "Systemd Daemon Bake Command", "link": "/BlazeCast/systemd-daemon-bake-command" },
-                        { "text": "User Specific Tokens", "link": "/BlazeCast/user-specific-tokens" }
+                        { "text": "Home", "link": "/" }
                     ]
                 }
             ],
-            "/Monitor/": [
+            "/Broadcasting/": [
                 {
-                    "text": "Monitor Plugin",
+                    "text": "Broadcasting",
                     "collapsed": false,
                     "items": [
-                        { "text": "Configuration", "link": "/Monitor/configuration" },
-                        { "text": "Docker Setup", "link": "/Monitor/docker-setup" },
-                        { "text": "Document", "link": "/Monitor/document" },
-                        { "text": "Initial Setup", "link": "/Monitor/initial-setup" },
-                        { "text": "Monitor Plugin Sales Prospect Ru", "link": "/Monitor/monitor-plugin-sales-prospect-ru" },
-                        { "text": "Monitor Plugin Sales Prospect", "link": "/Monitor/monitor-plugin-sales-prospect" },
-                        { "text": "Queue Adapter", "link": "/Monitor/queue-adapter" },
-                        { "text": "Supervisor Status", "link": "/Monitor/supervisor-status" }
+                        { "text": "Home", "link": "/Broadcasting/" },
                     ]
                 }
             ],
-            "/PlumSearch/": [
+            "/BroadcastingNotification/": [
                 {
-                    "text": "PlumSearch Plugin",
+                    "text": "BroadcastingNotification",
                     "collapsed": false,
                     "items": [
-                        { "text": "Overview", "link": "/PlumSearch/new/overview" },
-                        { "text": "Filter Component And Parameters", "link": "/PlumSearch/Filter-Component-and-Parameters" },
-                        { "text": "Filterable Behavior And Filters", "link": "/PlumSearch/Filterable-Behavior-and-Filters" },
-                        { "text": "Install", "link": "/PlumSearch/Install" },
-                        { "text": "Quick Sample", "link": "/PlumSearch/Quick-Sample" },
-                        { "text": "Range Example", "link": "/PlumSearch/Range-Example" },
-                        { "text": "README", "link": "/PlumSearch/README" },
-                        { "text": "Search Helper", "link": "/PlumSearch/Search-Helper" }
+                        { "text": "Home", "link": "/BroadcastingNotification/" },
+                    ]
+                }
+            ],
+            "/Notification/": [
+                {
+                    "text": "Notification",
+                    "collapsed": false,
+                    "items": [
+                        { "text": "Home", "link": "/Notification/" },
+                        { "text": "Modules", "link": "/Notification/modules" },
+                    ]
+                }
+            ],
+            "/NotificationUI/": [
+                {
+                    "text": "NotificationUI",
+                    "collapsed": false,
+                    "items": [
+                        { "text": "Home", "link": "/NotificationUI/" },
                     ]
                 }
             ],
@@ -237,7 +218,16 @@ export default defineConfig({
                     "items": [
                         { "text": "Configuration", "link": "/Rhythm/configuration" },
                         { "text": "Home", "link": "/Rhythm/" },
-                        { "text": "Rhythm Plugin", "link": "/Rhythm/rhythm" }
+                        { "text": "Rhythm Plugin", "link": "/Rhythm/rhythm" },
+                    ]
+                }
+            ],
+            "/RocketChatNotification/": [
+                {
+                    "text": "RocketChatNotification",
+                    "collapsed": false,
+                    "items": [
+                        { "text": "Home", "link": "/RocketChatNotification/" },
                     ]
                 }
             ],
@@ -249,7 +239,8 @@ export default defineConfig({
                         { "text": "Custom Rules Guide", "link": "/RuleFlow/custom-rules-guide" },
                         { "text": "Home", "link": "/RuleFlow/" },
                         { "text": "JsonLogic Operations Reference", "link": "/RuleFlow/JsonLogic-Operations-Reference" },
-                        { "text": "Regex Compatibility", "link": "/RuleFlow/regex-compatibility" }
+                        { "text": "Regex Compatibility", "link": "/RuleFlow/regex-compatibility" },
+                        { "text": "RuleFlow Plugin Documentation", "link": "/RuleFlow/RuleFlow-Plugin-Documentation" }
                     ]
                 }
             ],
@@ -259,10 +250,19 @@ export default defineConfig({
                     "collapsed": false,
                     "items": [
                         { "text": "API Reference", "link": "/Scheduling/API-Reference" },
+                        { "text": "Home", "link": "/Scheduling/Home" },
                         { "text": "Home", "link": "/Scheduling/" },
                         { "text": "Installation", "link": "/Scheduling/Installation" },
                         { "text": "Integration", "link": "/Scheduling/Integration" },
-                        { "text": "Versions", "link": "/Scheduling/Versions" }
+                    ]
+                }
+            ],
+            "/SevenNotification/": [
+                {
+                    "text": "SevenNotification",
+                    "collapsed": false,
+                    "items": [
+                        { "text": "Home", "link": "/SevenNotification/" },
                     ]
                 }
             ],
@@ -272,9 +272,28 @@ export default defineConfig({
                     "collapsed": false,
                     "items": [
                         { "text": "API Reference", "link": "/SignalHandler/API-Reference" },
+                        { "text": "Home", "link": "/SignalHandler/Home" },
                         { "text": "Home", "link": "/SignalHandler/" },
                         { "text": "Installation", "link": "/SignalHandler/Installation" },
                         { "text": "Integration", "link": "/SignalHandler/Integration" }
+                    ]
+                }
+            ],
+            "/SlackNotification/": [
+                {
+                    "text": "SlackNotification",
+                    "collapsed": false,
+                    "items": [
+                        { "text": "Home", "link": "/SlackNotification/" },
+                    ]
+                }
+            ],
+            "/TelegramNotification/": [
+                {
+                    "text": "TelegramNotification",
+                    "collapsed": false,
+                    "items": [
+                        { "text": "Home", "link": "/TelegramNotification/" },
                     ]
                 }
             ]
@@ -360,9 +379,14 @@ export default defineConfig({
                             { text: 'Scheduling Plugin', link: '/Scheduling/' },
                             { text: 'SignalHandler Plugin', link: '/SignalHandler/' },
                             { text: 'Rhythm Plugin', link: '/Rhythm/' },
-                            { text: 'BlazeCast Plugin', link: '/BlazeCast/' },
-                            { text: 'Monitor Plugin', link: '/Monitor/' },
-                            { text: 'PlumSearch Plugin', link: '/PlumSearch/' }
+                            { text: 'Notification Plugin', link: '/Notification/' },
+                            { text: 'Broadcasting Plugin', link: '/Broadcasting/' },
+                            { text: 'BroadcastingNotification', link: '/BroadcastingNotification/' },
+                            { text: 'NotificationUI', link: '/NotificationUI/' },
+                            { text: 'RocketChatNotification', link: '/RocketChatNotification/' },
+                            { text: 'SevenNotification', link: '/SevenNotification/' },
+                            { text: 'SlackNotification', link: '/SlackNotification/' },
+                            { text: 'TelegramNotification', link: '/TelegramNotification/' },
                         ]
                     }
                 ],

@@ -4,6 +4,19 @@
 
 JsonLogic allows you to build complex rules, serialize them as JSON, and share them between front-end and back-end systems. This document describes all available operations in the RuleFlow plugin's JsonLogic implementation.
 
+## Table of Contents
+
+1. [Accessing Data](#accessing-data)
+2. [Logic and Boolean Operations](#logic-and-boolean-operations)
+3. [Comparison Operations](#comparison-operations)
+4. [Numeric Operations](#numeric-operations)
+5. [Array Operations](#array-operations)
+6. [String Operations](#string-operations)
+7. [Conditional Operations](#conditional-operations)
+8. [Collection Operations](#collection-operations)
+9. [Math Operations](#math-operations)
+
+
 ## Accessing Data
 
 ### var
@@ -33,7 +46,6 @@ JsonLogicRuleFactory::var('user.profile.name', 'Unknown')
 JsonLogicRuleFactory::var(['nested', 'path'])
 ```
 
----
 
 ## Logic and Boolean Operations
 
@@ -198,7 +210,6 @@ JsonLogicRuleFactory::some(collection, condition)
 JsonLogicRuleFactory::none(collection, condition)
 ```
 
----
 
 ## Comparison Operations
 
@@ -385,7 +396,6 @@ JsonLogicRuleFactory::lessThanOrEqual(first, second)
 JsonLogicRuleFactory::betweenInclusive(first, second, third) // Inclusive between
 ```
 
----
 
 ## Numeric Operations
 
@@ -435,7 +445,6 @@ JsonLogicRuleFactory::max([value1, value2, value3])
 JsonLogicRuleFactory::min([value1, value2, value3])
 ```
 
----
 
 ## Math Operations
 
@@ -554,7 +563,6 @@ JsonLogicRuleFactory::divide(dividend, divisor)
 JsonLogicRuleFactory::modulo(dividend, divisor)
 ```
 
----
 
 ## Array Operations
 
@@ -725,7 +733,6 @@ Result: 1
 JsonLogicRuleFactory::length(array)
 ```
 
----
 
 ## Collection Operations
 
@@ -800,7 +807,6 @@ JsonLogicRuleFactory::missing(['key1', 'key2', 'key3'])
 JsonLogicRuleFactory::missingSome(minRequired, ['key1', 'key2', 'key3'])
 ```
 
----
 
 ## String Operations
 
@@ -1024,7 +1030,6 @@ JsonLogicRuleFactory::length(stringOrArray)
 JsonLogicRuleFactory::match(string, pattern, flags)
 ```
 
----
 
 ## Conditional Operations
 
@@ -1052,7 +1057,6 @@ JsonLogicRuleFactory::match(string, pattern, flags)
 JsonLogicRuleFactory::if([condition, thenResult, elseResult])
 ```
 
----
 
 ## Edge Cases and Special Behaviors
 
@@ -1120,7 +1124,6 @@ Different implementations may handle errors differently:
 - Deep nesting of rules
 - Circular references in data objects
 
----
 
 ## Implementation Notes
 
