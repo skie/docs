@@ -294,4 +294,4 @@ window.CakeNotification.renderer.registerTemplates({
     }
 });
 ```
-
+

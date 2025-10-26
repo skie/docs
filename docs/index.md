@@ -22,7 +22,7 @@ features:
     link: /Scheduling/
   - title: SignalHandler Plugin
     details: Cross-platform signal handling for CakePHP console commands. Enable graceful termination of long-running commands with zero external dependencies and full event system integration.
-    link: /SignalHandler/
+    link: /SignalHandler/Home
   - title: Rhythm Plugin
     details: Real-time application performance monitoring for CakePHP applications with comprehensive metric collection, storage, and visualization.
     link: /Rhythm/

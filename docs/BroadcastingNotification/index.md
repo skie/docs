@@ -104,6 +104,7 @@ The Broadcasting plugin provides a bell element that wraps the base Notification
 ]) ?>
 ```
 
+
 ### Configuration Options
 
 ```php
@@ -795,3 +796,4 @@ Echo.private(`users.${userId}`)
 3. Run multiple queue workers
 4. Optimize broadcast payload size
 5. Consider using fan-out pattern for broadcasts to many users
+

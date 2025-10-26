@@ -4,19 +4,6 @@
 
 JsonLogic allows you to build complex rules, serialize them as JSON, and share them between front-end and back-end systems. This document describes all available operations in the RuleFlow plugin's JsonLogic implementation.
 
-## Table of Contents
-
-1. [Accessing Data](#accessing-data)
-2. [Logic and Boolean Operations](#logic-and-boolean-operations)
-3. [Comparison Operations](#comparison-operations)
-4. [Numeric Operations](#numeric-operations)
-5. [Array Operations](#array-operations)
-6. [String Operations](#string-operations)
-7. [Conditional Operations](#conditional-operations)
-8. [Collection Operations](#collection-operations)
-9. [Math Operations](#math-operations)
-
-
 ## Accessing Data
 
 ### var
@@ -45,7 +32,6 @@ JsonLogicRuleFactory::var('field_name')
 JsonLogicRuleFactory::var('user.profile.name', 'Unknown')
 JsonLogicRuleFactory::var(['nested', 'path'])
 ```
-
 
 ## Logic and Boolean Operations
 

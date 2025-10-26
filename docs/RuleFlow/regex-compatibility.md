@@ -1,38 +1,5 @@
 # Regular Expression Compatibility Guide
 
-## Table of Contents
-
-1. [Overview](#overview)
-2. [Built-in Regex Support](#built-in-regex-support)
-   - [Server-side (PHP)](#server-side-php)
-   - [Client-side (JavaScript)](#client-side-javascript)
-3. [Cross-Platform Pattern Guidelines](#cross-platform-pattern-guidelines)
-   - [Store Patterns Without Delimiters](#store-patterns-without-delimiters)
-   - [Automatic Delimiter Handling](#automatic-delimiter-handling)
-4. [Common Validation Patterns](#common-validation-patterns)
-   - [Email Validation](#email-validation)
-   - [Phone Number Validation](#phone-number-validation)
-   - [Password Strength](#password-strength)
-   - [Postal Code Validation](#postal-code-validation)
-5. [Form Usage Examples](#form-usage-examples)
-   - [HTML Form with Validation](#html-form-with-validation)
-   - [Controller Validation](#controller-validation)
-6. [Browser Compatibility](#browser-compatibility)
-   - [Modern Features (Use with Caution)](#modern-features-use-with-caution)
-   - [Legacy-Compatible Alternatives](#legacy-compatible-alternatives)
-7. [Performance Tips](#performance-tips)
-   - [Cache Compiled Patterns](#cache-compiled-patterns)
-   - [Avoid Catastrophic Backtracking](#avoid-catastrophic-backtracking)
-8. [Testing Patterns](#testing-patterns)
-   - [Test Both Environments](#test-both-environments)
-9. [Configuration Approach](#configuration-approach)
-   - [Centralized Pattern Storage](#centralized-pattern-storage)
-10. [Best Practices Summary](#best-practices-summary)
-11. [Common Gotchas](#common-gotchas)
-    - [Escaping Issues](#escaping-issues)
-    - [Flag Differences](#flag-differences)
-
-
 ## Overview
 
 This guide explains how to use regular expressions in RuleFlow for consistent validation between PHP (server-side) and JavaScript (client-side).

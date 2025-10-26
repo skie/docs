@@ -642,3 +642,4 @@ public function testTelegramMessageFormat(): void
     $this->assertStringContainsString('Order #12345', $message->getContent());
 }
 ```
+

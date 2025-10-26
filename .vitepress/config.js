@@ -5,11 +5,11 @@ import { mermaidPlugin } from './plugins/mermaid-simple.js'
 
 export default defineConfig({
     srcDir: 'docs',
-    base: '/docs-test/', // Set to your repository name for GitHub Pages
-    // base: '/docs/', // Set to your repository name for GitHub Pages
+    // base: '/docs-test/', // Set to your repository name for GitHub Pages
+    base: '/docs/', // Set to your repository name for GitHub Pages
     // base: '/', // Set to your repository name for GitHub Pages
     title: 'Evgeny Tomenko - CakePHP Plugins',
-    description: 'Professional CakePHP plugins by Evgeny Tomenko - Admin, RuleFlow, Scheduling, and SignalHandler plugins',
+    description: 'Professional CakePHP plugins by Evgeny Tomenko',
     ignoreDeadLinks: true,
     head: [
         ['link', { rel: 'icon', type: 'image/png', href: '/favicon/favicon-96x96.png', sizes: '96x96' }],
@@ -179,7 +179,7 @@ export default defineConfig({
                     "text": "Broadcasting",
                     "collapsed": false,
                     "items": [
-                        { "text": "Home", "link": "/Broadcasting/" },
+                        { "text": "Home", "link": "/Broadcasting/" }
                     ]
                 }
             ],
@@ -188,7 +188,7 @@ export default defineConfig({
                     "text": "BroadcastingNotification",
                     "collapsed": false,
                     "items": [
-                        { "text": "Home", "link": "/BroadcastingNotification/" },
+                        { "text": "Home", "link": "/BroadcastingNotification/" }
                     ]
                 }
             ],
@@ -198,7 +198,6 @@ export default defineConfig({
                     "collapsed": false,
                     "items": [
                         { "text": "Home", "link": "/Notification/" },
-                        { "text": "Modules", "link": "/Notification/modules" },
                     ]
                 }
             ],
@@ -207,7 +206,7 @@ export default defineConfig({
                     "text": "NotificationUI",
                     "collapsed": false,
                     "items": [
-                        { "text": "Home", "link": "/NotificationUI/" },
+                        { "text": "Home", "link": "/NotificationUI/" }
                     ]
                 }
             ],
@@ -216,9 +215,9 @@ export default defineConfig({
                     "text": "Rhythm Plugin",
                     "collapsed": false,
                     "items": [
-                        { "text": "Configuration", "link": "/Rhythm/configuration" },
                         { "text": "Home", "link": "/Rhythm/" },
                         { "text": "Rhythm Plugin", "link": "/Rhythm/rhythm" },
+                        { "text": "Configuration", "link": "/Rhythm/configuration" },
                     ]
                 }
             ],
@@ -227,7 +226,7 @@ export default defineConfig({
                     "text": "RocketChatNotification",
                     "collapsed": false,
                     "items": [
-                        { "text": "Home", "link": "/RocketChatNotification/" },
+                        { "text": "Home", "link": "/RocketChatNotification/" }
                     ]
                 }
             ],
@@ -236,11 +235,10 @@ export default defineConfig({
                     "text": "RuleFlow",
                     "collapsed": false,
                     "items": [
-                        { "text": "Custom Rules Guide", "link": "/RuleFlow/custom-rules-guide" },
                         { "text": "Home", "link": "/RuleFlow/" },
+                        { "text": "Custom Rules Guide", "link": "/RuleFlow/custom-rules-guide" },
                         { "text": "JsonLogic Operations Reference", "link": "/RuleFlow/JsonLogic-Operations-Reference" },
                         { "text": "Regex Compatibility", "link": "/RuleFlow/regex-compatibility" },
-                        { "text": "RuleFlow Plugin Documentation", "link": "/RuleFlow/RuleFlow-Plugin-Documentation" }
                     ]
                 }
             ],
@@ -249,11 +247,10 @@ export default defineConfig({
                     "text": "Scheduling",
                     "collapsed": false,
                     "items": [
-                        { "text": "API Reference", "link": "/Scheduling/API-Reference" },
-                        { "text": "Home", "link": "/Scheduling/Home" },
                         { "text": "Home", "link": "/Scheduling/" },
                         { "text": "Installation", "link": "/Scheduling/Installation" },
                         { "text": "Integration", "link": "/Scheduling/Integration" },
+                        { "text": "API Reference", "link": "/Scheduling/API-Reference" },
                     ]
                 }
             ],
@@ -262,7 +259,7 @@ export default defineConfig({
                     "text": "SevenNotification",
                     "collapsed": false,
                     "items": [
-                        { "text": "Home", "link": "/SevenNotification/" },
+                        { "text": "Home", "link": "/SevenNotification/" }
                     ]
                 }
             ],
@@ -271,11 +268,10 @@ export default defineConfig({
                     "text": "SignalHandler",
                     "collapsed": false,
                     "items": [
-                        { "text": "API Reference", "link": "/SignalHandler/API-Reference" },
                         { "text": "Home", "link": "/SignalHandler/Home" },
-                        { "text": "Home", "link": "/SignalHandler/" },
                         { "text": "Installation", "link": "/SignalHandler/Installation" },
-                        { "text": "Integration", "link": "/SignalHandler/Integration" }
+                        { "text": "Integration", "link": "/SignalHandler/Integration" },
+                        { "text": "API Reference", "link": "/SignalHandler/API-Reference" },
                     ]
                 }
             ],
@@ -284,7 +280,7 @@ export default defineConfig({
                     "text": "SlackNotification",
                     "collapsed": false,
                     "items": [
-                        { "text": "Home", "link": "/SlackNotification/" },
+                        { "text": "Home", "link": "/SlackNotification/" }
                     ]
                 }
             ],
@@ -293,7 +289,7 @@ export default defineConfig({
                     "text": "TelegramNotification",
                     "collapsed": false,
                     "items": [
-                        { "text": "Home", "link": "/TelegramNotification/" },
+                        { "text": "Home", "link": "/TelegramNotification/" }
                     ]
                 }
             ]
@@ -320,7 +316,7 @@ export default defineConfig({
         // },
         footer: {
             message: 'Released under the MIT License.',
-            copyright: 'Copyright © 2010-2025 Evgeny Tomenko'
+            copyright: 'Copyright © 2008-2025 Evgeny Tomenko'
         },
         lastUpdated: {
             text: 'Updated at',
@@ -377,7 +373,7 @@ export default defineConfig({
                         items: [
                             { text: 'RuleFlow Plugin', link: '/RuleFlow/' },
                             { text: 'Scheduling Plugin', link: '/Scheduling/' },
-                            { text: 'SignalHandler Plugin', link: '/SignalHandler/' },
+                            { text: 'SignalHandler Plugin', link: '/SignalHandler/Home' },
                             { text: 'Rhythm Plugin', link: '/Rhythm/' },
                             { text: 'Notification Plugin', link: '/Notification/' },
                             { text: 'Broadcasting Plugin', link: '/Broadcasting/' },

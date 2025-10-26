@@ -1,49 +1,5 @@
 # Integration
 
-## Table of Contents
-
-- [Schedule Constraints](#schedule-constraints)
-- [Basic Integration](#basic-integration)
-- [Defining Scheduled Tasks](#defining-scheduled-tasks)
-  - [Command Scheduling](#command-scheduling)
-  - [Closure Scheduling](#closure-scheduling)
-  - [Shell Command Scheduling](#shell-command-scheduling)
-- [Frequency Options](#frequency-options)
-  - [Second-Based Frequencies](#second-based-frequencies)
-  - [Minute-Based Frequencies](#minute-based-frequencies)
-  - [Hour-Based Frequencies](#hour-based-frequencies)
-  - [Daily Frequencies](#daily-frequencies)
-  - [Weekly and Monthly](#weekly-and-monthly)
-  - [Custom Cron Expressions](#custom-cron-expressions)
-- [Task Constraints](#task-constraints)
-  - [Time-Based Constraints](#time-based-constraints)
-  - [Day-Based Constraints](#day-based-constraints)
-  - [Conditional Constraints](#conditional-constraints)
-- [Preventing Task Overlaps](#preventing-task-overlaps)
-- [Single-Server Execution](#single-server-execution)
-- [Background Execution](#background-execution)
-- [Task Hooks](#task-hooks)
-  - [Before and After Hooks](#before-and-after-hooks)
-  - [Success and Failure Hooks](#success-and-failure-hooks)
-- [Sub-Minute Tasks](#sub-minute-tasks)
-  - [Repeatable Tasks](#repeatable-tasks)
-- [Event Integration](#event-integration)
-- [Running the Scheduler](#running-the-scheduler)
-  - [Production Setup](#production-setup)
-  - [Development Mode](#development-mode)
-  - [Testing Scheduled Tasks](#testing-scheduled-tasks)
-- [Configuration Options](#configuration-options)
-  - [Timezone Configuration](#timezone-configuration)
-  - [Cache Configuration](#cache-configuration)
-  - [Mutex Configuration](#mutex-configuration)
-- [Task Output](#task-output)
-- [Task Monitoring](#task-monitoring)
-  - [Enabling Monitoring](#enabling-monitoring)
-  - [Monitoring Configuration](#monitoring-configuration)
-  - [Monitoring Methods](#monitoring-methods)
-  - [Monitoring Commands](#monitoring-commands)
-- [Events](#events)
-
 <a name="schedule-constraints"></a>
 ## Schedule Constraints
 
@@ -470,6 +426,7 @@ $schedule->command('emails send')
         // The task failed...
     });
 ```
+
 
 <a name="monitoring"></a>
 ## Task Monitoring

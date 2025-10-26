@@ -253,3 +253,4 @@ try {
     $this->log("SMS notification failed: " . $e->getMessage());
 }
 ```
+

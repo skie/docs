@@ -578,6 +578,7 @@ class TopSellers extends BaseWidget
 
 When this widget is included on the dashboard, Rhythm will automatically include the contents of these files within `<style>` tags so they do not need to be published to the `webroot` directory.
 
+
 ### Data Capture and Aggregation
 
 Custom widgets may fetch and display data from anywhere; however, you may wish to leverage Rhythm's powerful and efficient data recording and aggregation system.

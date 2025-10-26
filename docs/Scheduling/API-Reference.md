@@ -2,41 +2,6 @@
 
 This document provides a comprehensive reference for all classes, methods, and interfaces provided by the Scheduling plugin.
 
-## Table of Contents
-
-- [Schedule Class](#schedule-class)
-  - [Schedule Class Methods](#schedule-class-methods)
-  - [Dynamic Methods](#dynamic-methods)
-- [Event Class](#event-class)
-  - [Frequency Methods](#frequency-methods)
-  - [Constraint Methods](#constraint-methods)
-  - [Configuration Methods](#configuration-methods)
-  - [Hook Methods](#hook-methods)
-  - [Output Methods](#output-methods)
-  - [Execution Methods](#execution-methods)
-  - [Information Methods](#information-methods)
-  - [Monitoring Methods](#monitoring-methods)
-- [Console Commands](#console-commands)
-  - [ScheduleRunCommand](#scheduleruncommand)
-  - [ScheduleWorkCommand](#scheduleworkcommand)
-  - [ScheduleListCommand](#schedulelistcommand)
-  - [ScheduleTestCommand](#scheduletestcommand)
-  - [ScheduleClearCacheCommand](#scheduleclearcachecommand)
-  - [ScheduleFinishCommand](#schedulefinishcommand)
-- [Monitoring Commands](#monitoring-commands)
-  - [ScheduleMonitorSyncCommand](#schedulemonitorsynccommand)
-  - [ScheduleMonitorListCommand](#schedulemonitorlistcommand)
-  - [ScheduleMonitorPruneCommand](#schedulemonitorprunecommand)
-- [Events](#events)
-  - [Event Data](#event-data)
-- [Interfaces](#interfaces)
-  - [EventMutexInterface](#eventmutexinterface)
-  - [SchedulingMutexInterface](#schedulingmutexinterface)
-- [Constants](#constants)
-  - [Usage Example](#usage-example)
-- [Configuration](#configuration)
-  - [Scheduling Configuration](#scheduling-configuration)
-
 ## Schedule Class
 
 The main scheduling class that manages all scheduled tasks.
@@ -156,6 +121,7 @@ Represents a scheduled task event.
 | --- | --- |
 | `sendOutputTo(string $location, bool $append = false)` | Send the output to a file |
 | `appendOutputTo(string $location)` | Append the output to a file |
+
 
 ### Execution Methods
 

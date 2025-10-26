@@ -37,6 +37,7 @@ public function bootstrap(): void
 }
 ```
 
+
 <a name="slack-app-setup"></a>
 ### Slack App Setup
 
