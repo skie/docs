@@ -44,12 +44,12 @@ const pluginRepos = {
   'Rhythm': 'https://github.com/skie/rhythm',
   'Notification': 'https://github.com/skie/notification',
   'Broadcasting': 'https://github.com/skie/broadcasting',
-  'BroadcastingNotification': 'https://github.com/skie/broadcasting-notification',
+  'BroadcastingNotification': 'https://github.com/skie/notification-broadcasting',
   'NotificationUI': 'https://github.com/skie/notification-ui',
-  'RocketChatNotification': 'https://github.com/skie/rocketchat-notification',
-  'SevenNotification': 'https://github.com/skie/seven-notification',
-  'SlackNotification': 'https://github.com/skie/slack-notification',
-  'TelegramNotification': 'https://github.com/skie/telegram-notification'
+  'RocketChatNotification': 'https://github.com/skie/notification-rocketchat',
+  'SevenNotification': 'https://github.com/skie/notification-seven',
+  'SlackNotification': 'https://github.com/skie/notification-slack',
+  'TelegramNotification': 'https://github.com/skie/notification-telegram'
 }
 
 const currentPluginName = computed(() => {
