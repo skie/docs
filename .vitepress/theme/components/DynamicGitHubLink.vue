@@ -54,7 +54,7 @@ const pluginRepos = {
 
 const currentPluginName = computed(() => {
   const path = route.path
-  const basePath = site.value.base || '/'
+  const basePath = '/docs'
   const normalizedPath = basePath !== '/' ? path.replace(basePath.replace(/\/$/, ''), '') : path
 
   for (const plugin in pluginRepos) {
