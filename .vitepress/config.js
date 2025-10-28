@@ -295,9 +295,9 @@ export default defineConfig({
             ]
         },
         // end-sidebar
-        socialLinks: [
-            { icon: 'github', link: 'https://github.com/skie' },
-        ],
+        // socialLinks: [
+        //     { icon: 'github', link: 'https://github.com/skie' },
+        // ],
 
         // Let's only index latest version in search to speed up indexing.
         search: {
