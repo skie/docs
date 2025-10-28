@@ -31,9 +31,10 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useRoute } from 'vitepress'
+import { useRoute, useData } from 'vitepress'
 
 const route = useRoute()
+const { site } = useData()
 
 // Plugin to GitHub repository mapping
 const pluginRepos = {
@@ -53,8 +54,11 @@ const pluginRepos = {
 
 const currentPluginName = computed(() => {
   const path = route.path
+  const basePath = site.value.base || '/'
+  const normalizedPath = basePath !== '/' ? path.replace(basePath.replace(/\/$/, ''), '') : path
+
   for (const plugin in pluginRepos) {
-    if (path.startsWith(`/${plugin}/`)) {
+    if (normalizedPath.startsWith(`/${plugin}/`)) {
       return plugin
     }
   }
