@@ -12,7 +12,7 @@
           class="article-card"
         >
           <h2 class="article-title">
-            <a :href="article.path">{{ article.title }}</a>
+            <a :href="getArticlePath(article.path)">{{ article.title }}</a>
           </h2>
           <div class="article-meta">
             <time :datetime="article.date">{{ formatDate(article.date) }}</time>
@@ -25,7 +25,7 @@
               class="article-tag"
             >{{ tag }}</span>
           </div>
-          <a :href="article.path" class="article-link">Read more →</a>
+          <a :href="getArticlePath(article.path)" class="article-link">Read more →</a>
         </article>
       </div>
 
@@ -54,10 +54,11 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { useRoute, useRouter } from 'vitepress'
+import { useRoute, useRouter, useData } from 'vitepress'
 
 const route = useRoute()
 const router = useRouter()
+const { site } = useData()
 
 const articles = ref([])
 const loading = ref(true)
@@ -76,7 +77,8 @@ onMounted(() => {
 const loadArticles = async () => {
   try {
     // Try to load from the generated metadata file in public directory
-    const metadataPath = '/articles-metadata.json'
+    const base = site.value.base
+    const metadataPath = `${base}articles-metadata.json`.replace(/\/+/g, '/')
     const response = await fetch(metadataPath)
 
     if (response.ok) {
@@ -129,6 +131,11 @@ const formatDate = (dateString) => {
     month: 'long',
     day: 'numeric'
   })
+}
+
+const getArticlePath = (path) => {
+  const base = site.value.base
+  return `${base}${path}`.replace(/\/+/g, '/')
 }
 </script>
 

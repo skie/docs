@@ -2,13 +2,13 @@
   <div v-if="prevArticle || nextArticle" class="article-navigation">
     <div v-if="prevArticle" class="nav-item nav-prev">
       <div class="nav-label">Previous Article</div>
-      <a :href="prevArticle.path" class="nav-link">
+      <a :href="getArticlePath(prevArticle.path)" class="nav-link">
         ← {{ prevArticle.title }}
       </a>
     </div>
     <div v-if="nextArticle" class="nav-item nav-next">
       <div class="nav-label">Next Article</div>
-      <a :href="nextArticle.path" class="nav-link">
+      <a :href="getArticlePath(nextArticle.path)" class="nav-link">
         {{ nextArticle.title }} →
       </a>
     </div>
@@ -17,9 +17,10 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { useRoute } from 'vitepress'
+import { useRoute, useData } from 'vitepress'
 
 const route = useRoute()
+const { site } = useData()
 const articles = ref([])
 
 onMounted(() => {
@@ -28,7 +29,8 @@ onMounted(() => {
 
 const loadArticles = async () => {
   try {
-    const metadataPath = '/articles-metadata.json'
+    const base = site.value.base
+    const metadataPath = `${base}articles-metadata.json`.replace(/\/+/g, '/')
     const response = await fetch(metadataPath)
 
     if (response.ok) {
@@ -41,9 +43,20 @@ const loadArticles = async () => {
   }
 }
 
+const getArticlePath = (path) => {
+  const base = site.value.base
+  return `${base}${path}`.replace(/\/+/g, '/')
+}
+
 const currentArticleIndex = computed(() => {
   const currentPath = route.path
-  return articles.value.findIndex(article => article.path === currentPath)
+  // Remove base from current path for comparison
+  const base = site.value.base
+  const pathWithoutBase = currentPath.replace(new RegExp(`^${base.replace(/\/$/, '')}`), '')
+  return articles.value.findIndex(article => {
+    const articlePath = article.path.startsWith('/') ? article.path : `/${article.path}`
+    return articlePath === pathWithoutBase || articlePath === currentPath
+  })
 })
 
 const prevArticle = computed(() => {

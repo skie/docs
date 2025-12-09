@@ -16,7 +16,7 @@
       >
         <div class="article-header">
           <h3 class="article-title">
-            <a :href="article.path">{{ article.title }}</a>
+            <a :href="getArticlePath(article.path)">{{ article.title }}</a>
           </h3>
           <time :datetime="article.date" class="article-date">{{ formatDate(article.date) }}</time>
         </div>
@@ -35,7 +35,9 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useData } from 'vitepress'
 
+const { site } = useData()
 const articles = ref([])
 const loading = ref(true)
 
@@ -45,7 +47,8 @@ onMounted(() => {
 
 const loadRecentArticles = async () => {
   try {
-    const metadataPath = '/recent-articles.json'
+    const base = site.value.base
+    const metadataPath = `${base}recent-articles.json`.replace(/\/+/g, '/')
     const response = await fetch(metadataPath)
 
     if (response.ok) {
@@ -69,6 +72,11 @@ const formatDate = (dateString) => {
     month: 'short',
     day: 'numeric'
   })
+}
+
+const getArticlePath = (path) => {
+  const base = site.value.base
+  return `${base}${path}`.replace(/\/+/g, '/')
 }
 </script>
 
