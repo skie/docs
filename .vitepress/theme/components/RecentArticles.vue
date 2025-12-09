@@ -2,7 +2,7 @@
   <div class="recent-articles">
     <div class="recent-articles-header">
       <h2 class="recent-articles-title">Recent Articles</h2>
-      <a href="/articles/" class="view-all-link">View All Articles →</a>
+      <a :href="getArticlesIndexPath()" class="view-all-link">View All Articles →</a>
     </div>
     <div v-if="loading" class="loading">Loading articles...</div>
     <div v-else-if="articles.length === 0" class="no-articles">
@@ -77,6 +77,11 @@ const formatDate = (dateString) => {
 const getArticlePath = (path) => {
   const base = site.value.base
   return `${base}${path}`.replace(/\/+/g, '/')
+}
+
+const getArticlesIndexPath = () => {
+  const base = site.value.base
+  return `${base}articles/`.replace(/\/+/g, '/')
 }
 </script>
 
