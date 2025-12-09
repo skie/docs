@@ -109,3 +109,85 @@
 .VPNav .VPNavBar .VPNavBarMenu .VPNavBarMenuLink .VPNavBarMenuLinkDropdown .VPNavBarMenuLink:hover {
     background-color: var(--vp-c-bg-soft);
 }
+
+/* Home page two-column layout */
+.VPHome {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.5rem;
+}
+
+/* Hero spans full width */
+.VPHome .VPHero {
+    grid-column: 1 / -1;
+}
+
+/* Articles wrapper in left column */
+.home-content-wrapper {
+    grid-column: 1;
+    margin-top: 0;
+}
+
+.home-articles-column {
+    min-width: 0;
+}
+
+.home-features-column {
+    min-width: 0;
+}
+
+/* Features section in right column */
+.VPHome .VPFeatures {
+    grid-column: 2;
+    margin-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.VPHome .VPFeatures .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Add title to features section to match articles title */
+.VPHome .VPFeatures::before {
+    content: 'Plugins';
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--vp-c-text-1);
+    margin-bottom: 1.5rem;
+}
+
+/* Reduce gaps between feature items and change from 3 to 2 columns */
+.VPHome .VPFeatures .items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.VPHome .VPFeatures .item {
+    grid-column: auto !important;
+    width: auto !important;
+}
+
+/* On mobile, stack columns */
+@media (max-width: 960px) {
+    .VPHome {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .home-content-wrapper {
+        grid-column: 1;
+    }
+
+    .VPHome .VPFeatures {
+        grid-column: 1;
+    }
+}

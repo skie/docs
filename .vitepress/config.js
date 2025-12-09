@@ -2,12 +2,43 @@ import { defineConfig } from 'vitepress'
 import { generateSidebars } from './sidebar.js'
 import { versionReplacer } from './plugins/version-replacer.js'
 import { mermaidPlugin } from './plugins/mermaid-simple.js'
+import { articlesPlugin, generateArticlesMetadata, getArticlesMetadata } from './plugins/articles.js'
+
+// Configuration for recent articles on home page
+const RECENT_ARTICLES_COUNT = 5
+
+// Generate articles metadata on config load
+const articles = generateArticlesMetadata(RECENT_ARTICLES_COUNT)
+
+// Generate articles sidebar
+function generateArticlesSidebar() {
+  const articlesList = getArticlesMetadata()
+  const sidebarItems = [
+    { text: 'All Articles', link: '/articles/' }
+  ]
+
+  // Add each article to the sidebar
+  articlesList.forEach(article => {
+    sidebarItems.push({
+      text: article.title,
+      link: article.path
+    })
+  })
+
+  return [
+    {
+      text: 'Articles',
+      collapsed: false,
+      items: sidebarItems
+    }
+  ]
+}
 
 export default defineConfig({
     srcDir: 'docs',
     // base: '/docs-test/', // Set to your repository name for GitHub Pages
-    base: '/docs/', // Set to your repository name for GitHub Pages
-    // base: '/', // Set to your repository name for GitHub Pages
+    // base: '/docs/', // Set to your repository name for GitHub Pages
+    base: '/', // Set to your repository name for GitHub Pages
     title: 'Evgeny Tomenko - CakePHP Plugins',
     description: 'Professional CakePHP plugins by Evgeny Tomenko',
     ignoreDeadLinks: true,
@@ -164,16 +195,18 @@ export default defineConfig({
     themeConfig: {
         logo: '/logo.svg',
         // start-sidebar
-        sidebar: {
-            "/": [
-                {
-                    "text": "Evgeny's CakePHP Plugins",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/" }
-                    ]
-                }
-            ],
+        sidebar: (() => {
+            const sidebar = {
+                "/": [
+                    {
+                        "text": "Evgeny's CakePHP Plugins",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/" }
+                        ]
+                    }
+                ],
+                "/articles/": generateArticlesSidebar(),
             "/Broadcasting/": [
                 {
                     "text": "Broadcasting",
@@ -293,7 +326,16 @@ export default defineConfig({
                     ]
                 }
             ]
-        },
+            }
+
+            // Add sidebar entries for individual article pages
+            const articlesList = getArticlesMetadata()
+            articlesList.forEach(article => {
+                sidebar[article.path] = generateArticlesSidebar()
+            })
+
+            return sidebar
+        })(),
         // end-sidebar
         // socialLinks: [
         //     { icon: 'github', link: 'https://github.com/skie' },
@@ -325,6 +367,11 @@ export default defineConfig({
                 timeStyle: 'medium'
             }
         }
+    },
+    vite: {
+        plugins: [
+            articlesPlugin(RECENT_ARTICLES_COUNT)
+        ]
     },
     build: {
         rollupOptions: {
@@ -368,6 +415,7 @@ export default defineConfig({
             lang: 'en',
             themeConfig: {
                 nav: [
+                    { text: 'Articles', link: '/articles/' },
                     {
                         text: 'Plugins',
                         items: [

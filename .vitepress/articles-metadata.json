@@ -1,0 +1,139 @@
+[
+  {
+    "title": "When Jobs Need to Work Together",
+    "date": "2025-12-08",
+    "description": "Most queue systems are great at running independent jobs. You push a job, a worker picks it up, it runs, it's done. This works perfectly until you need jobs that depend on each other. Until you need to process a thousand items in parallel and track when they're all done. Until you need to roll back three completed operations because the fourth one failed.",
+    "tags": [
+      "BatchQueue",
+      "Parallel Processing",
+      "Saga Pattern",
+      "Workflows",
+      "Jobs",
+      "Distributed Systems",
+      "Queue"
+    ],
+    "slug": "BatchQueue-Article",
+    "path": "/articles/BatchQueue-Article",
+    "file": "BatchQueue-Article.md"
+  },
+  {
+    "title": "The Evolution: From Railway Class to Functional Pipes",
+    "date": "2025-12-06",
+    "description": "Scott Wlaschin, a well known figure in the functional programming community, introduced the Railway Oriented Programming (ROP) pattern in his presentations and blog posts. His innovative approach to error handling has revolutionized how developers think about managing failures in their applications.",
+    "tags": [
+      "PHP",
+      "Railway Programming",
+      "Functional Programming",
+      "Error Handling",
+      "CakePHP"
+    ],
+    "slug": "Railway Oriented Programming with PHP 8.5 Pipes - From Theory to Practice",
+    "path": "/articles/Railway%20Oriented%20Programming%20with%20PHP%208.5%20Pipes%20-%20From%20Theory%20to%20Practice",
+    "file": "Railway Oriented Programming with PHP 8.5 Pipes - From Theory to Practice.md"
+  },
+  {
+    "title": "PHP 8.5 Pipe Operator - A New Era of Readable Code",
+    "date": "2025-12-05",
+    "description": "The PHP 8.5 pipe operator brings a powerful new way to write clear, maintainable code. Drawing inspiration from functional programming languages and Unix command-line tools, this feature transforms how we chain operations and handle data flow in our applications.",
+    "tags": [
+      "PHP",
+      "PHP 8.5",
+      "Functional Programming",
+      "Code Quality"
+    ],
+    "slug": "PHP 8.5 Pipe Operator - A New Era of Readable Code",
+    "path": "/articles/PHP%208.5%20Pipe%20Operator%20-%20A%20New%20Era%20of%20Readable%20Code",
+    "file": "PHP 8.5 Pipe Operator - A New Era of Readable Code.md"
+  },
+  {
+    "title": "Railway Oriented Programming - A Functional Approach to Error Handling",
+    "date": "2024-12-23",
+    "description": "Scott Wlaschin, a well known figure in the functional programming community, introduced the Railway Oriented Programming (ROP) pattern in his presentations and blog posts. His innovative approach to error handling has revolutionized how developers think about managing failures in their applications.",
+    "tags": [
+      "PHP",
+      "Railway Programming",
+      "Functional Programming",
+      "Error Handling",
+      "CakePHP"
+    ],
+    "slug": "Railway Oriented Programming - A Functional Approach to Error Handling",
+    "path": "/articles/Railway%20Oriented%20Programming%20-%20A%20Functional%20Approach%20to%20Error%20Handling",
+    "file": "Railway Oriented Programming - A Functional Approach to Error Handling.md"
+  },
+  {
+    "title": "Building Dynamic Web Applications with CakePHP and htmx Advanced Features",
+    "date": "2024-12-07",
+    "description": "This article continues our exploration of htmx integration with CakePHP, focusing on two powerful features that can significantly enhance user experience: inline editing and lazy loading of actions. These features demonstrate how htmx can transform traditional web interfaces into dynamic, responsive experiences while maintaining clean, maintainable code.",
+    "tags": [
+      "CakePHP",
+      "htmx",
+      "JavaScript",
+      "Web Development",
+      "Tutorial"
+    ],
+    "slug": "Building Dynamic Web Applications with CakePHP and htmx Advanced Features",
+    "path": "/articles/Building%20Dynamic%20Web%20Applications%20with%20CakePHP%20and%20htmx%20Advanced%20Features",
+    "file": "Building Dynamic Web Applications with CakePHP and htmx Advanced Features.md"
+  },
+  {
+    "title": "Building Dynamic Web Applications with CakePHP and htmx Infinite Scroll",
+    "date": "2024-12-04",
+    "description": "In this tutorial, we'll demonstrate how to implement infinite scroll pagination using htmx in CakePHP applications. Infinite scroll has become a popular user interface pattern, allowing users to seamlessly load more content as they scroll down a page.",
+    "tags": [
+      "CakePHP",
+      "htmx",
+      "JavaScript",
+      "Web Development",
+      "Tutorial",
+      "Pagination"
+    ],
+    "slug": "Building Dynamic Web Applications with CakePHP and htmx Infinite Scroll",
+    "path": "/articles/Building%20Dynamic%20Web%20Applications%20with%20CakePHP%20and%20htmx%20Infinite%20Scroll",
+    "file": "Building Dynamic Web Applications with CakePHP and htmx Infinite Scroll.md"
+  },
+  {
+    "title": "Building Dynamic Web Applications with CakePHP and htmx A Practical Guide",
+    "date": "2024-12-02",
+    "description": "This article explores how to integrate htmx with CakePHP to create more dynamic and interactive web applications while writing less JavaScript code. We'll cover the basics of htmx, its setup with CakePHP, and practical examples to demonstrate its power.",
+    "tags": [
+      "CakePHP",
+      "htmx",
+      "JavaScript",
+      "Web Development",
+      "Tutorial"
+    ],
+    "slug": "Building Dynamic Web Applications with CakePHP and htmx A Practical Guide",
+    "path": "/articles/Building%20Dynamic%20Web%20Applications%20with%20CakePHP%20and%20htmx%20A%20Practical%20Guide",
+    "file": "Building Dynamic Web Applications with CakePHP and htmx A Practical Guide.md"
+  },
+  {
+    "title": "Flows: collections, pipelines and pipes",
+    "date": "2022-01-22",
+    "description": "Explore data flow patterns in PHP including collections processing, pipeline design patterns, and Railway Oriented Programming for handling complex data transformations and error management.",
+    "tags": [
+      "PHP",
+      "Railway programming",
+      "Functional Programming",
+      "CakePHP",
+      "Collections",
+      "Pipelines"
+    ],
+    "slug": "2022-01-23-flows_collections_pipeplines_piipes",
+    "path": "/articles/2022-01-23-flows_collections_pipeplines_piipes",
+    "file": "2022-01-23-flows_collections_pipeplines_piipes.md"
+  },
+  {
+    "title": "CakePHP Pages Layer",
+    "date": "2022-01-08",
+    "description": "Learn how to use the CakePHP Pages plugin to implement the Page Controller pattern, bringing Razor Pages-style architecture to CakePHP with ViewModels for type-safe template data.",
+    "tags": [
+      "CakePHP",
+      "Page Controller",
+      "ViewModel",
+      "Architecture"
+    ],
+    "slug": "2022-01-08-cakepages",
+    "path": "/articles/2022-01-08-cakepages",
+    "file": "2022-01-08-cakepages.md"
+  }
+]

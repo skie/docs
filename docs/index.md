@@ -12,6 +12,9 @@ hero:
     - theme: alt
       text: View on GitHub
       link: https://github.com/skie
+    - theme: alt
+      text: View Articles
+      link: /articles/
 
 features:
   - title: RuleFlow Plugin
