@@ -26,6 +26,9 @@ features:
   - title: SignalHandler Plugin
     details: Cross-platform signal handling for CakePHP console commands. Enable graceful termination of long-running commands with zero external dependencies and full event system integration.
     link: /SignalHandler/Home
+  - title: BatchQueue Plugin
+    details: Advanced job coordination system for CakePHP Queue. Handle parallel batches, sequential chains, saga compensation patterns, and dynamic workflow execution with proper failure handling.
+    link: /BatchQueue/
   - title: Rhythm Plugin
     details: Real-time application performance monitoring for CakePHP applications with comprehensive metric collection, storage, and visualization.
     link: /Rhythm/

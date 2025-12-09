@@ -44,5 +44,14 @@
         { "text": "API Reference", "link": "/SignalHandler/API-Reference" }
       ]
     }
+  ],
+  "/BatchQueue/": [
+    {
+      "text": "BatchQueue Plugin",
+      "collapsed": false,
+      "items": [
+        { "text": "Home", "link": "/BatchQueue/" }
+      ]
+    }
   ]
 }

@@ -41,15 +41,16 @@ const pluginRepos = {
   'RuleFlow': 'https://github.com/skie/rule-flow',
   'Scheduling': 'https://github.com/skie/cakephp-scheduling',
   'SignalHandler': 'https://github.com/skie/signalhandler',
+  'BatchQueue': 'https://github.com/crustum/batch-queue',
   'Rhythm': 'https://github.com/skie/rhythm',
-  'Notification': 'https://github.com/skie/notification',
-  'Broadcasting': 'https://github.com/skie/broadcasting',
-  'BroadcastingNotification': 'https://github.com/skie/notification-broadcasting',
-  'NotificationUI': 'https://github.com/skie/notification-ui',
-  'RocketChatNotification': 'https://github.com/skie/notification-rocketchat',
-  'SevenNotification': 'https://github.com/skie/notification-seven',
-  'SlackNotification': 'https://github.com/skie/notification-slack',
-  'TelegramNotification': 'https://github.com/skie/notification-telegram'
+  'Broadcasting': 'https://github.com/Crustum/Broadcasting',
+  'Notification': 'https://github.com/Crustum/Notification',
+  'NotificationUI': 'https://github.com/Crustum/NotificationUI',
+  'BroadcastingNotification': 'https://github.com/Crustum/BroadcastingNotification',
+  'RocketChatNotification': 'https://github.com/Crustum/RocketchatNotification',
+  'SevenNotification': 'https://github.com/Crustum/SevenNotification',
+  'SlackNotification': 'https://github.com/Crustum/SlackNotification',
+  'TelegramNotification': 'https://github.com/Crustum/TelegramNotification'
 }
 
 const currentPluginName = computed(() => {

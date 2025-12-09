@@ -37,8 +37,8 @@ function generateArticlesSidebar() {
 export default defineConfig({
     srcDir: 'docs',
     // base: '/docs-test/', // Set to your repository name for GitHub Pages
-    // base: '/docs/', // Set to your repository name for GitHub Pages
-    base: '/', // Set to your repository name for GitHub Pages
+    base: '/docs/', // Set to your repository name for GitHub Pages
+    // base: '/', // Set to your repository name for GitHub Pages
     title: 'Evgeny Tomenko - CakePHP Plugins',
     description: 'Professional CakePHP plugins by Evgeny Tomenko',
     ignoreDeadLinks: true,
@@ -287,6 +287,15 @@ export default defineConfig({
                     ]
                 }
             ],
+            "/BatchQueue/": [
+                {
+                    "text": "BatchQueue",
+                    "collapsed": false,
+                    "items": [
+                        { "text": "Home", "link": "/BatchQueue/" }
+                    ]
+                }
+            ],
             "/SevenNotification/": [
                 {
                     "text": "SevenNotification",
@@ -422,6 +431,7 @@ export default defineConfig({
                             { text: 'RuleFlow Plugin', link: '/RuleFlow/' },
                             { text: 'Scheduling Plugin', link: '/Scheduling/' },
                             { text: 'SignalHandler Plugin', link: '/SignalHandler/Home' },
+                            { text: 'BatchQueue Plugin', link: '/BatchQueue/' },
                             { text: 'Rhythm Plugin', link: '/Rhythm/' },
                             { text: 'Notification Plugin', link: '/Notification/' },
                             { text: 'Broadcasting Plugin', link: '/Broadcasting/' },
