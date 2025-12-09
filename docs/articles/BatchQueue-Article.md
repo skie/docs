@@ -422,9 +422,9 @@ Here's what happens in different failure scenarios. If stock reservation fails, 
 graph TD
     A[ReserveStockJob] -->|Success| B[ChargePaymentJob]
     B -->|Success| C[FulfillOrderJob]
-    B -->|Failure| D["ReleaseStockJob (Compensation)"]
+    B -->|Failure| D["ReleaseStockJob"]
     C -->|Success| F[Order Complete]
-    C -->|Failure| E["RefundPaymentJob (Compensation)"]
+    C -->|Failure| E["RefundPaymentJob"]
     E --> D
     D --> G[Compensation Complete]
 ```
@@ -637,10 +637,10 @@ The flow adapts based on runtime data. A domestic order from a returning custome
 ```mermaid
 graph TD
     A[InitialValidationJob] --> B{Order Analysis}
-    B -->|International| C[Add CustomsDocumentationJob]
+    B -->|International| C[Add CustomsDocJob]
     B -->|High Value| D[Add FraudReviewJob]
     B -->|New Customer| E[Add IdentityVerificationJob]
-    C --> G[CustomsDocumentationJob]
+    C --> G[CustomsDocJob]
     D --> H[FraudReviewJob]
     E --> I[IdentityVerificationJob]
     G --> J[FinalizeOrderJob]
