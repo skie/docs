@@ -130,16 +130,15 @@ const getArticlesIndexPath = () => {
 }
 
 .article-item {
-  padding: 1.25rem;
-  background: var(--vp-c-bg-soft);
+  padding: 1.5rem;
   border-radius: 8px;
   border: 1px solid var(--vp-c-divider);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: border-color 0.25s, box-shadow 0.25s;
 }
 
 .article-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .article-header {

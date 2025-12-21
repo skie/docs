@@ -161,16 +161,15 @@ const getArticlePath = (path) => {
 }
 
 .article-card {
-  background: var(--vp-c-bg-soft);
   border-radius: 8px;
   padding: 1.5rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: border-color 0.25s, box-shadow 0.25s;
   border: 1px solid var(--vp-c-divider);
 }
 
 .article-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .article-title {
