@@ -20,6 +20,12 @@ features:
   - title: Temporal Plugin
     details: Workflow orchestration for CakePHP applications using Temporal. Build distributed, scalable, durable, and highly available workflows for asynchronous long-running business logic in microservice architectures.
     link: /Temporal/
+  - title: OpenRouter Plugin
+    details: Easy-to-use interface for integrating OpenRouter into CakePHP applications. Unified interface for Large Language Models with type-safe DTOs for all API interactions including chat completions, streaming, tool calling, and more.
+    link: /OpenRouter/
+  - title: PluginManifest Plugin
+    details: Plugin asset installation and publishing system for CakePHP 5.x. Standardized mechanism for plugins to distribute optional assets including configuration files, migrations, templates, and bootstrap code with smart duplicate detection.
+    link: /PluginManifest/
   - title: RuleFlow Plugin
     details: Powerful rule engine with JSON Logic support for complex business rules. Transform CakePHP validation rules, integrate with FormHelper, and create dynamic rule-based workflows.
     link: /RuleFlow/

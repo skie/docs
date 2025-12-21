@@ -62,5 +62,23 @@
         { "text": "Home", "link": "/Temporal/" }
       ]
     }
+  ],
+  "/OpenRouter/": [
+    {
+      "text": "OpenRouter Plugin",
+      "collapsed": false,
+      "items": [
+        { "text": "Home", "link": "/OpenRouter/" }
+      ]
+    }
+  ],
+  "/PluginManifest/": [
+    {
+      "text": "PluginManifest Plugin",
+      "collapsed": false,
+      "items": [
+        { "text": "Home", "link": "/PluginManifest/" }
+      ]
+    }
   ]
 }

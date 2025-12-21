@@ -243,6 +243,24 @@ export default defineConfig({
                     ]
                 }
             ],
+            "/OpenRouter/": [
+                {
+                    "text": "OpenRouter",
+                    "collapsed": false,
+                    "items": [
+                        { "text": "Home", "link": "/OpenRouter/" }
+                    ]
+                }
+            ],
+            "/PluginManifest/": [
+                {
+                    "text": "PluginManifest",
+                    "collapsed": false,
+                    "items": [
+                        { "text": "Home", "link": "/PluginManifest/" }
+                    ]
+                }
+            ],
             "/Rhythm/": [
                 {
                     "text": "Rhythm Plugin",
@@ -437,17 +455,19 @@ export default defineConfig({
                     {
                         text: 'Plugins',
                         items: [
-                            { text: 'RuleFlow Plugin', link: '/RuleFlow/' },
-                            { text: 'Scheduling Plugin', link: '/Scheduling/' },
-                            { text: 'SignalHandler Plugin', link: '/SignalHandler/Home' },
                             { text: 'BatchQueue Plugin', link: '/BatchQueue/' },
-                            { text: 'Rhythm Plugin', link: '/Rhythm/' },
-                            { text: 'Notification Plugin', link: '/Notification/' },
                             { text: 'Broadcasting Plugin', link: '/Broadcasting/' },
                             { text: 'BroadcastingNotification', link: '/BroadcastingNotification/' },
+                            { text: 'Notification Plugin', link: '/Notification/' },
                             { text: 'NotificationUI', link: '/NotificationUI/' },
+                            { text: 'OpenRouter Plugin', link: '/OpenRouter/' },
+                            { text: 'PluginManifest Plugin', link: '/PluginManifest/' },
+                            { text: 'Rhythm Plugin', link: '/Rhythm/' },
                             { text: 'RocketChatNotification', link: '/RocketChatNotification/' },
+                            { text: 'RuleFlow Plugin', link: '/RuleFlow/' },
+                            { text: 'Scheduling Plugin', link: '/Scheduling/' },
                             { text: 'SevenNotification', link: '/SevenNotification/' },
+                            { text: 'SignalHandler Plugin', link: '/SignalHandler/Home' },
                             { text: 'SlackNotification', link: '/SlackNotification/' },
                             { text: 'TelegramNotification', link: '/TelegramNotification/' },
                             { text: 'Temporal Plugin', link: '/Temporal/' },
