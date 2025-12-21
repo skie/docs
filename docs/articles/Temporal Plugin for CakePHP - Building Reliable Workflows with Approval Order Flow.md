@@ -16,7 +16,7 @@ tags:
 
 Traditional queue systems are excellent at handling independent jobs. You push a job, a worker processes it, and it completes. But what happens when you need workflows that span hours or days? What happens when workflows need to pause and wait for human approval? What happens when you need to coordinate activities across multiple languages and services?
 
-That's where Temporal comes in. Temporal is a durable execution system that provides guarantees about workflow execution, automatic retries, and the ability to pause workflows indefinitely while waiting for external events. The [`crustum/temporal`](https://github.com/crustum/temporal) plugin for CakePHP brings these capabilities to your CakePHP applications with an elegant, framework-native API.
+That's where Temporal comes in. Temporal is a durable execution system that provides guarantees about workflow execution, automatic retries, and the ability to pause workflows indefinitely while waiting for external events. The [`crustum/temporal`](https://github.com/crustum/cakephp-temporal) plugin for CakePHP brings these capabilities to your CakePHP applications with an elegant, framework-native API.
 
 This article explores how to build a real-world approval workflow using the Temporal plugin. We'll implement an order approval system where orders require manager approval before payment processing, and we'll demonstrate how workflows can pause indefinitely, receive signals from web controllers, and coordinate activities across PHP and Go workers.
 
