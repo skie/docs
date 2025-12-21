@@ -4,6 +4,10 @@ import DynamicGitHubLink from './components/DynamicGitHubLink.vue'
 import ArticlesList from './components/ArticlesList.vue'
 import ArticleNavigation from './components/ArticleNavigation.vue'
 import RecentArticles from './components/RecentArticles.vue'
+import codeblocksFold from 'vitepress-plugin-codeblocks-fold'
+import 'vitepress-plugin-codeblocks-fold/style/index.css'
+import { useData, useRoute } from 'vitepress'
+import { CODEBLOCK_FOLD_THRESHOLD } from '../constants.js'
 import './custom.css'
 
 export default {
@@ -24,5 +28,14 @@ export default {
         }
       }, 100);
     }
+  },
+  setup() {
+    const { frontmatter } = useData()
+    const route = useRoute()
+    // Makes all code blocks collapsible
+    // Parameters: (context, defaultAllFold, collapsedHeight)
+    // - defaultAllFold: false = start expanded, true = start collapsed (default: true)
+    // - collapsedHeight: height in pixels when collapsed (default: 400px)
+    codeblocksFold({ route, frontmatter }, true, 350)
   }
 }

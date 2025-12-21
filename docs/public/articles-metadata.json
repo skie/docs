@@ -1,5 +1,19 @@
 [
   {
+    "title": "Temporal: Building AI Agents with Durable Conversations",
+    "date": "2025-12-21",
+    "description": "Traditional AI agent implementations face a fundamental challenge: how do you maintain conversational state across long-running interactions? This article explores how to build production-ready AI agents using the Temporal plugin combined with the AIAgent framework, demonstrating how workflows orchestrate LLM interactions, manage tool execution, and coordinate multi-step conversations that can span hours or days.",
+    "tags": [
+      "Temporal",
+      "AI Agents",
+      "Workflows",
+      "LLM"
+    ],
+    "slug": "Building AI Agents with Durable Conversations",
+    "path": "/articles/Building%20AI%20Agents%20with%20Durable%20Conversations",
+    "file": "Building AI Agents with Durable Conversations.md"
+  },
+  {
     "title": "Temporal Plugin for CakePHP: Building Reliable Workflows with Approval Order Flow",
     "date": "2025-12-17",
     "description": "Traditional queue systems are excellent at handling independent jobs, but what happens when you need workflows that span hours or days? What happens when workflows need to pause and wait for human approval? This article explores how to build a real-world approval workflow using the Temporal plugin for CakePHP, implementing an order approval system that demonstrates how workflows can pause indefinitely, receive signals from web controllers, and coordinate activities across multiple languages and services.",
