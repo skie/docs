@@ -53,5 +53,14 @@
         { "text": "Home", "link": "/BatchQueue/" }
       ]
     }
+  ],
+  "/Temporal/": [
+    {
+      "text": "Temporal Plugin",
+      "collapsed": false,
+      "items": [
+        { "text": "Home", "link": "/Temporal/" }
+      ]
+    }
   ]
 }

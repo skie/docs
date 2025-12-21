@@ -1,9 +1,9 @@
 ---
-title: "The Evolution: From Railway Class to Functional Pipes"
+title: "Railway Oriented Programming with PHP 8.5 Pipes - From Theory to Practice"
 date: 2025-12-06
-description: Scott Wlaschin, a well known figure in the functional programming community, introduced the Railway Oriented Programming (ROP) pattern in his presentations and blog posts. His innovative approach to error handling has revolutionized how developers think about managing failures in their applications.
+description: "This article explores the evolution from Railway Oriented Programming concepts to practical application using PHP 8.5's pipe operator. We'll combine ROP with functional pipes to create elegant, production-ready code that handles complex business logic with grace and clarity."
 tags:
-  - PHP
+  - PHP 8.5
   - Railway Programming
   - Functional Programming
   - Error Handling

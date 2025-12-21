@@ -50,7 +50,8 @@ const pluginRepos = {
   'RocketChatNotification': 'https://github.com/Crustum/RocketchatNotification',
   'SevenNotification': 'https://github.com/Crustum/SevenNotification',
   'SlackNotification': 'https://github.com/Crustum/SlackNotification',
-  'TelegramNotification': 'https://github.com/Crustum/TelegramNotification'
+  'TelegramNotification': 'https://github.com/Crustum/TelegramNotification',
+  'Temporal': 'https://github.com/Crustum/cakephp-temporal',
 }
 
 const currentPluginName = computed(() => {

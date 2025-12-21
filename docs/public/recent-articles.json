@@ -1,5 +1,22 @@
 [
   {
+    "title": "Temporal Plugin for CakePHP: Building Reliable Workflows with Approval Order Flow",
+    "date": "2025-12-17",
+    "description": "Traditional queue systems are excellent at handling independent jobs, but what happens when you need workflows that span hours or days? What happens when workflows need to pause and wait for human approval? This article explores how to build a real-world approval workflow using the Temporal plugin for CakePHP, implementing an order approval system that demonstrates how workflows can pause indefinitely, receive signals from web controllers, and coordinate activities across multiple languages and services.",
+    "tags": [
+      "Temporal",
+      "CakePHP",
+      "Workflows",
+      "Queue Systems",
+      "PHP",
+      "Go",
+      "Distributed Systems"
+    ],
+    "slug": "Temporal Plugin for CakePHP - Building Reliable Workflows with Approval Order Flow",
+    "path": "/articles/Temporal%20Plugin%20for%20CakePHP%20-%20Building%20Reliable%20Workflows%20with%20Approval%20Order%20Flow",
+    "file": "Temporal Plugin for CakePHP - Building Reliable Workflows with Approval Order Flow.md"
+  },
+  {
     "title": "When Jobs Need to Work Together",
     "date": "2025-12-08",
     "description": "Most queue systems are great at running independent jobs. You push a job, a worker picks it up, it runs, it's done. This works perfectly until you need jobs that depend on each other. Until you need to process a thousand items in parallel and track when they're all done. Until you need to roll back three completed operations because the fourth one failed.",
@@ -17,11 +34,11 @@
     "file": "BatchQueue-Article.md"
   },
   {
-    "title": "The Evolution: From Railway Class to Functional Pipes",
+    "title": "Railway Oriented Programming with PHP 8.5 Pipes - From Theory to Practice",
     "date": "2025-12-06",
-    "description": "Scott Wlaschin, a well known figure in the functional programming community, introduced the Railway Oriented Programming (ROP) pattern in his presentations and blog posts. His innovative approach to error handling has revolutionized how developers think about managing failures in their applications.",
+    "description": "This article explores the evolution from Railway Oriented Programming concepts to practical application using PHP 8.5's pipe operator. We'll combine ROP with functional pipes to create elegant, production-ready code that handles complex business logic with grace and clarity.",
     "tags": [
-      "PHP",
+      "PHP 8.5",
       "Railway Programming",
       "Functional Programming",
       "Error Handling",
@@ -59,20 +76,5 @@
     "slug": "Railway Oriented Programming - A Functional Approach to Error Handling",
     "path": "/articles/Railway%20Oriented%20Programming%20-%20A%20Functional%20Approach%20to%20Error%20Handling",
     "file": "Railway Oriented Programming - A Functional Approach to Error Handling.md"
-  },
-  {
-    "title": "Building Dynamic Web Applications with CakePHP and htmx Advanced Features",
-    "date": "2024-12-07",
-    "description": "This article continues our exploration of htmx integration with CakePHP, focusing on two powerful features that can significantly enhance user experience: inline editing and lazy loading of actions. These features demonstrate how htmx can transform traditional web interfaces into dynamic, responsive experiences while maintaining clean, maintainable code.",
-    "tags": [
-      "CakePHP",
-      "htmx",
-      "JavaScript",
-      "Web Development",
-      "Tutorial"
-    ],
-    "slug": "Building Dynamic Web Applications with CakePHP and htmx Advanced Features",
-    "path": "/articles/Building%20Dynamic%20Web%20Applications%20with%20CakePHP%20and%20htmx%20Advanced%20Features",
-    "file": "Building Dynamic Web Applications with CakePHP and htmx Advanced Features.md"
   }
 ]

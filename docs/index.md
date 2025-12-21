@@ -17,6 +17,9 @@ hero:
       link: /articles/
 
 features:
+  - title: Temporal Plugin
+    details: Workflow orchestration for CakePHP applications using Temporal. Build distributed, scalable, durable, and highly available workflows for asynchronous long-running business logic in microservice architectures.
+    link: /Temporal/
   - title: RuleFlow Plugin
     details: Powerful rule engine with JSON Logic support for complex business rules. Transform CakePHP validation rules, integrate with FormHelper, and create dynamic rule-based workflows.
     link: /RuleFlow/

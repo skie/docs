@@ -296,6 +296,15 @@ export default defineConfig({
                     ]
                 }
             ],
+            "/Temporal/": [
+                {
+                    "text": "Temporal",
+                    "collapsed": false,
+                    "items": [
+                        { "text": "Home", "link": "/Temporal/" }
+                    ]
+                }
+            ],
             "/SevenNotification/": [
                 {
                     "text": "SevenNotification",
@@ -441,6 +450,7 @@ export default defineConfig({
                             { text: 'SevenNotification', link: '/SevenNotification/' },
                             { text: 'SlackNotification', link: '/SlackNotification/' },
                             { text: 'TelegramNotification', link: '/TelegramNotification/' },
+                            { text: 'Temporal Plugin', link: '/Temporal/' },
                         ]
                     }
                 ],
