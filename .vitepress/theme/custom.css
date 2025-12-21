@@ -127,9 +127,12 @@
     grid-column: 1 / -1;
 }
 
-/* Articles wrapper in left column */
+/* Home content wrapper spans both columns with grid */
 .home-content-wrapper {
-    grid-column: 1;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
     margin-top: 0;
 }
 
@@ -137,43 +140,70 @@
     min-width: 0;
 }
 
+.home-plugins-column {
+    min-width: 0;
+}
+
 .home-features-column {
     min-width: 0;
 }
 
-/* Features section in right column */
-.VPHome .VPFeatures {
-    grid-column: 2;
+/* Features section in right column - applies to both default and custom */
+.home-plugins-column .VPFeatures {
     margin-top: 0;
-    padding-left: 0;
-    padding-right: 0;
 }
 
-.VPHome .VPFeatures .container {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-/* Add title to features section to match articles title */
-.VPHome .VPFeatures::before {
-    content: 'Plugins';
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--vp-c-text-1);
-    margin-bottom: 1.5rem;
+.home-plugins-column .VPFeatures .container {
+    max-width: 100%;
+    padding: 0;
 }
 
 /* Reduce gaps between feature items and change from 3 to 2 columns */
-.VPHome .VPFeatures .items {
+.home-plugins-column .VPFeatures .items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
-.VPHome .VPFeatures .item {
-    grid-column: auto !important;
-    width: auto !important;
+.home-plugins-column .VPFeatures .item {
+    margin: 0;
+}
+
+.home-plugins-column .VPFeatures .item .VPFeature {
+    height: 100%;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 8px;
+    transition: border-color 0.25s, box-shadow 0.25s;
+    display: block;
+    text-decoration: none;
+}
+
+.home-plugins-column .VPFeatures .item .VPFeature:hover {
+    border-color: var(--vp-c-brand-1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.home-plugins-column .VPFeatures .item .box {
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-plugins-column .VPFeatures .item .title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0 0 0.5rem 0;
+    color: var(--vp-c-text-1);
+}
+
+.home-plugins-column .VPFeatures .item .details {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--vp-c-text-2);
+    margin: 0;
+    flex: 1;
 }
 
 /* On mobile, stack columns */
@@ -185,9 +215,7 @@
 
     .home-content-wrapper {
         grid-column: 1;
+        grid-template-columns: 1fr;
     }
 
-    .VPHome .VPFeatures {
-        grid-column: 1;
-    }
 }

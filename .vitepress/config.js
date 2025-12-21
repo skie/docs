@@ -3,12 +3,18 @@ import { generateSidebars } from './sidebar.js'
 import { versionReplacer } from './plugins/version-replacer.js'
 import { mermaidPlugin } from './plugins/mermaid-simple.js'
 import { articlesPlugin, generateArticlesMetadata, getArticlesMetadata } from './plugins/articles.js'
+import { pluginsPlugin, generatePluginsMetadata, getPluginsMetadata, getPluginsConfig } from './plugins/plugins.js'
+import { pluginsConfig } from './plugins-config.js'
+import { RECENT_PLUGINS_COUNT } from './constants.js'
 
 // Configuration for recent articles on home page
 const RECENT_ARTICLES_COUNT = 5
 
 // Generate articles metadata on config load
 const articles = generateArticlesMetadata(RECENT_ARTICLES_COUNT)
+
+// Generate plugins metadata on config load
+const plugins = generatePluginsMetadata(RECENT_PLUGINS_COUNT)
 
 // Generate articles sidebar
 function generateArticlesSidebar() {
@@ -28,6 +34,30 @@ function generateArticlesSidebar() {
   return [
     {
       text: 'Articles',
+      collapsed: false,
+      items: sidebarItems
+    }
+  ]
+}
+
+// Generate plugins sidebar
+function generatePluginsSidebar() {
+  const pluginsList = getPluginsMetadata()
+  const sidebarItems = [
+    { text: 'All Plugins', link: '/plugins/' }
+  ]
+
+  // Add each plugin to the sidebar
+  pluginsList.forEach(plugin => {
+    sidebarItems.push({
+      text: plugin.title,
+      link: plugin.path
+    })
+  })
+
+  return [
+    {
+      text: 'Plugins',
       collapsed: false,
       items: sidebarItems
     }
@@ -207,6 +237,7 @@ export default defineConfig({
                     }
                 ],
                 "/articles/": generateArticlesSidebar(),
+                "/plugins/": generatePluginsSidebar(),
             "/Broadcasting/": [
                 {
                     "text": "Broadcasting",
@@ -370,6 +401,12 @@ export default defineConfig({
                 sidebar[article.path] = generateArticlesSidebar()
             })
 
+            // Add sidebar entries for individual plugin pages
+            const pluginsList = getPluginsMetadata()
+            pluginsList.forEach(plugin => {
+                sidebar[plugin.path] = generatePluginsSidebar()
+            })
+
             return sidebar
         })(),
         // end-sidebar
@@ -404,11 +441,12 @@ export default defineConfig({
             }
         }
     },
-    vite: {
-        plugins: [
-            articlesPlugin(RECENT_ARTICLES_COUNT)
-        ]
-    },
+            vite: {
+                plugins: [
+                    articlesPlugin(RECENT_ARTICLES_COUNT),
+                    pluginsPlugin(RECENT_PLUGINS_COUNT)
+                ]
+            },
     build: {
         rollupOptions: {
             output: {
@@ -452,26 +490,19 @@ export default defineConfig({
             themeConfig: {
                 nav: [
                     { text: 'Articles', link: '/articles/' },
+                    { text: 'All Plugins', link: '/plugins/' },
                     {
                         text: 'Plugins',
-                        items: [
-                            { text: 'BatchQueue Plugin', link: '/BatchQueue/' },
-                            { text: 'Broadcasting Plugin', link: '/Broadcasting/' },
-                            { text: 'BroadcastingNotification', link: '/BroadcastingNotification/' },
-                            { text: 'Notification Plugin', link: '/Notification/' },
-                            { text: 'NotificationUI', link: '/NotificationUI/' },
-                            { text: 'OpenRouter Plugin', link: '/OpenRouter/' },
-                            { text: 'PluginManifest Plugin', link: '/PluginManifest/' },
-                            { text: 'Rhythm Plugin', link: '/Rhythm/' },
-                            { text: 'RocketChatNotification', link: '/RocketChatNotification/' },
-                            { text: 'RuleFlow Plugin', link: '/RuleFlow/' },
-                            { text: 'Scheduling Plugin', link: '/Scheduling/' },
-                            { text: 'SevenNotification', link: '/SevenNotification/' },
-                            { text: 'SignalHandler Plugin', link: '/SignalHandler/Home' },
-                            { text: 'SlackNotification', link: '/SlackNotification/' },
-                            { text: 'TelegramNotification', link: '/TelegramNotification/' },
-                            { text: 'Temporal Plugin', link: '/Temporal/' },
-                        ]
+                        items: [...pluginsConfig]
+                            .sort((a, b) => a.title.localeCompare(b.title))
+                            .map(plugin => {
+                                let text = plugin.title.replace(/\s+Plugin$/, '')
+                                text = text.replace(/([a-z])([A-Z])/g, '$1 $2')
+                                return {
+                                    text: text,
+                                    link: plugin.link
+                                }
+                            })
                     }
                 ],
             }

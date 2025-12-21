@@ -4,6 +4,8 @@ import DynamicGitHubLink from './components/DynamicGitHubLink.vue'
 import ArticlesList from './components/ArticlesList.vue'
 import ArticleNavigation from './components/ArticleNavigation.vue'
 import RecentArticles from './components/RecentArticles.vue'
+import RecentPlugins from './components/RecentPlugins.vue'
+import PluginsList from './components/PluginsList.vue'
 import codeblocksFold from 'vitepress-plugin-codeblocks-fold'
 import 'vitepress-plugin-codeblocks-fold/style/index.css'
 import { useData, useRoute } from 'vitepress'
@@ -18,6 +20,8 @@ export default {
     app.component('ArticlesList', ArticlesList)
     app.component('ArticleNavigation', ArticleNavigation)
     app.component('RecentArticles', RecentArticles)
+    app.component('RecentPlugins', RecentPlugins)
+    app.component('PluginsList', PluginsList)
     if (typeof window !== 'undefined') {
       setInterval(() => {
         if (window.renderMermaidDiagrams) {

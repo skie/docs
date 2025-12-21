@@ -8,8 +8,8 @@
         <div class="home-articles-column">
           <RecentArticles />
         </div>
-        <div class="home-features-column">
-          <!-- Features will be rendered here by default -->
+        <div class="home-plugins-column">
+          <RecentPlugins />
         </div>
       </div>
     </template>
@@ -26,6 +26,7 @@ import DefaultTheme from 'vitepress/theme-without-fonts'
 import DynamicGitHubLink from './components/DynamicGitHubLink.vue'
 import ArticleNavigation from './components/ArticleNavigation.vue'
 import RecentArticles from './components/RecentArticles.vue'
+import RecentPlugins from './components/RecentPlugins.vue'
 
 const { Layout } = DefaultTheme
 const route = useRoute()
