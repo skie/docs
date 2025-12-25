@@ -6,6 +6,8 @@ import { articlesPlugin, generateArticlesMetadata, getArticlesMetadata } from '.
 import { pluginsPlugin, generatePluginsMetadata, getPluginsMetadata, getPluginsConfig } from './plugins/plugins.js'
 import { pluginsConfig } from './plugins-config.js'
 import { RECENT_PLUGINS_COUNT } from './constants.js'
+import { readdirSync, statSync } from 'fs'
+import { join, extname } from 'path'
 
 // Configuration for recent articles on home page
 const RECENT_ARTICLES_COUNT = 5
@@ -62,6 +64,23 @@ function generatePluginsSidebar() {
       items: sidebarItems
     }
   ]
+}
+
+// Check if a plugin has only one markdown file
+function hasSingleFile(pluginPath) {
+  try {
+    const pluginDir = join(process.cwd(), 'docs', pluginPath.replace(/^\//, ''))
+    if (!statSync(pluginDir).isDirectory()) {
+      return false
+    }
+
+    const files = readdirSync(pluginDir)
+    const mdFiles = files.filter(file => extname(file) === '.md')
+
+    return mdFiles.length === 1
+  } catch (error) {
+    return false
+  }
 }
 
 export default defineConfig({
@@ -238,161 +257,163 @@ export default defineConfig({
                 ],
                 "/articles/": generateArticlesSidebar(),
                 "/plugins/": generatePluginsSidebar(),
-            "/Broadcasting/": [
-                {
-                    "text": "Broadcasting",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/Broadcasting/" }
-                    ]
-                }
-            ],
-            "/BroadcastingNotification/": [
-                {
-                    "text": "BroadcastingNotification",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/BroadcastingNotification/" }
-                    ]
-                }
-            ],
-            "/Notification/": [
-                {
-                    "text": "Notification",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/Notification/" },
-                    ]
-                }
-            ],
-            "/NotificationUI/": [
-                {
-                    "text": "NotificationUI",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/NotificationUI/" }
-                    ]
-                }
-            ],
-            "/OpenRouter/": [
-                {
-                    "text": "OpenRouter",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/OpenRouter/" }
-                    ]
-                }
-            ],
-            "/PluginManifest/": [
-                {
-                    "text": "PluginManifest",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/PluginManifest/" }
-                    ]
-                }
-            ],
-            "/Rhythm/": [
-                {
-                    "text": "Rhythm Plugin",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/Rhythm/" },
-                        { "text": "Rhythm Plugin", "link": "/Rhythm/rhythm" },
-                        { "text": "Configuration", "link": "/Rhythm/configuration" },
-                    ]
-                }
-            ],
-            "/RocketChatNotification/": [
-                {
-                    "text": "RocketChatNotification",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/RocketChatNotification/" }
-                    ]
-                }
-            ],
-            "/RuleFlow/": [
-                {
-                    "text": "RuleFlow",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/RuleFlow/" },
-                        { "text": "Custom Rules Guide", "link": "/RuleFlow/custom-rules-guide" },
-                        { "text": "JsonLogic Operations Reference", "link": "/RuleFlow/JsonLogic-Operations-Reference" },
-                        { "text": "Regex Compatibility", "link": "/RuleFlow/regex-compatibility" },
-                    ]
-                }
-            ],
-            "/Scheduling/": [
-                {
-                    "text": "Scheduling",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/Scheduling/" },
-                        { "text": "Installation", "link": "/Scheduling/Installation" },
-                        { "text": "Integration", "link": "/Scheduling/Integration" },
-                        { "text": "API Reference", "link": "/Scheduling/API-Reference" },
-                    ]
-                }
-            ],
-            "/BatchQueue/": [
-                {
-                    "text": "BatchQueue",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/BatchQueue/" }
-                    ]
-                }
-            ],
-            "/Temporal/": [
-                {
-                    "text": "Temporal",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/Temporal/" }
-                    ]
-                }
-            ],
-            "/SevenNotification/": [
-                {
-                    "text": "SevenNotification",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/SevenNotification/" }
-                    ]
-                }
-            ],
-            "/SignalHandler/": [
-                {
-                    "text": "SignalHandler",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/SignalHandler/Home" },
-                        { "text": "Installation", "link": "/SignalHandler/Installation" },
-                        { "text": "Integration", "link": "/SignalHandler/Integration" },
-                        { "text": "API Reference", "link": "/SignalHandler/API-Reference" },
-                    ]
-                }
-            ],
-            "/SlackNotification/": [
-                {
-                    "text": "SlackNotification",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/SlackNotification/" }
-                    ]
-                }
-            ],
-            "/TelegramNotification/": [
-                {
-                    "text": "TelegramNotification",
-                    "collapsed": false,
-                    "items": [
-                        { "text": "Home", "link": "/TelegramNotification/" }
-                    ]
-                }
-            ]
+                "/Broadcasting/": [
+                    {
+                        "text": "Broadcasting",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/Broadcasting/" },
+                            { "text": "Mercure Broadcasting", "link": "/MercureBroadcasting" },
+                        ]
+                    }
+                ],
+                "/BroadcastingNotification/": [
+                    {
+                        "text": "BroadcastingNotification",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/BroadcastingNotification/" }
+                        ]
+                    }
+                ],
+                "/Notification/": [
+                    {
+                        "text": "Notification",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/Notification/" },
+                            { "text": "Modules", "link": "/Notification/modules" },
+                        ]
+                    }
+                ],
+                "/NotificationUI/": [
+                    {
+                        "text": "NotificationUI",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/NotificationUI/" }
+                        ]
+                    }
+                ],
+                "/OpenRouter/": [
+                    {
+                        "text": "OpenRouter",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/OpenRouter/" }
+                        ]
+                    }
+                ],
+                "/PluginManifest/": [
+                    {
+                        "text": "PluginManifest",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/PluginManifest/" }
+                        ]
+                    }
+                ],
+                "/Rhythm/": [
+                    {
+                        "text": "Rhythm Plugin",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/Rhythm/" },
+                            { "text": "Rhythm Plugin", "link": "/Rhythm/rhythm" },
+                            { "text": "Configuration", "link": "/Rhythm/configuration" },
+                        ]
+                    }
+                ],
+                "/RocketChatNotification/": [
+                    {
+                        "text": "RocketChatNotification",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/RocketChatNotification/" }
+                        ]
+                    }
+                ],
+                "/RuleFlow/": [
+                    {
+                        "text": "RuleFlow",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/RuleFlow/" },
+                            { "text": "Custom Rules Guide", "link": "/RuleFlow/custom-rules-guide" },
+                            { "text": "JsonLogic Operations Reference", "link": "/RuleFlow/JsonLogic-Operations-Reference" },
+                            { "text": "Regex Compatibility", "link": "/RuleFlow/regex-compatibility" },
+                        ]
+                    }
+                ],
+                "/Scheduling/": [
+                    {
+                        "text": "Scheduling",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/Scheduling/" },
+                            { "text": "Installation", "link": "/Scheduling/Installation" },
+                            { "text": "Integration", "link": "/Scheduling/Integration" },
+                            { "text": "API Reference", "link": "/Scheduling/API-Reference" },
+                        ]
+                    }
+                ],
+                "/BatchQueue/": [
+                    {
+                        "text": "BatchQueue",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/BatchQueue/" }
+                        ]
+                    }
+                ],
+                "/Temporal/": [
+                    {
+                        "text": "Temporal",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/Temporal/" }
+                        ]
+                    }
+                ],
+                "/SevenNotification/": [
+                    {
+                        "text": "SevenNotification",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/SevenNotification/" }
+                        ]
+                    }
+                ],
+                "/SignalHandler/": [
+                    {
+                        "text": "SignalHandler",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/SignalHandler/Home" },
+                            { "text": "Installation", "link": "/SignalHandler/Installation" },
+                            { "text": "Integration", "link": "/SignalHandler/Integration" },
+                            { "text": "API Reference", "link": "/SignalHandler/API-Reference" },
+                        ]
+                    }
+                ],
+                "/SlackNotification/": [
+                    {
+                        "text": "SlackNotification",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/SlackNotification/" }
+                        ]
+                    }
+                ],
+                "/TelegramNotification/": [
+                    {
+                        "text": "TelegramNotification",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/TelegramNotification/" }
+                        ]
+                    }
+                ]
             }
 
             // Add sidebar entries for individual article pages
@@ -402,9 +423,33 @@ export default defineConfig({
             })
 
             // Add sidebar entries for individual plugin pages
+            // Show all plugins for:
+            // 1. Single-file plugins (always)
+            // 2. Multi-file plugins with incomplete sidebars (only 1 item)
+            // Keep manual sidebars for multi-file plugins with 2+ items
             const pluginsList = getPluginsMetadata()
             pluginsList.forEach(plugin => {
-                sidebar[plugin.path] = generatePluginsSidebar()
+                // If plugin has only one file, always show all plugins sidebar
+                if (hasSingleFile(plugin.path)) {
+                    sidebar[plugin.path] = generatePluginsSidebar()
+                }
+                // If plugin has a manual sidebar, check if it's complete (2+ items)
+                else if (sidebar[plugin.path] && Array.isArray(sidebar[plugin.path])) {
+                    const sidebarConfig = sidebar[plugin.path]
+                    // Count total items across all sections
+                    const totalItems = sidebarConfig.reduce((count, section) => {
+                        return count + (Array.isArray(section.items) ? section.items.length : 0)
+                    }, 0)
+                    // If sidebar has only 1 item, it's incomplete - show all plugins instead
+                    if (totalItems <= 1) {
+                        sidebar[plugin.path] = generatePluginsSidebar()
+                    }
+                    // Otherwise (2+ items), keep the manual sidebar as-is
+                }
+                // If plugin has multiple files and no manual sidebar, show all plugins
+                else if (!sidebar[plugin.path]) {
+                    sidebar[plugin.path] = generatePluginsSidebar()
+                }
             })
 
             return sidebar

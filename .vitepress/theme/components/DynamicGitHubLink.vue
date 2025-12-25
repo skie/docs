@@ -30,47 +30,47 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useRoute, useData } from 'vitepress'
 
 const route = useRoute()
 const { site } = useData()
+const pluginsMetadata = ref([])
 
-// Plugin to GitHub repository mapping
-const pluginRepos = {
-  'BatchQueue': 'https://github.com/crustum/batch-queue',
-  'BroadcastingNotification': 'https://github.com/Crustum/BroadcastingNotification',
-  'Broadcasting': 'https://github.com/Crustum/Broadcasting',
-  'Notification': 'https://github.com/Crustum/Notification',
-  'NotificationUI': 'https://github.com/Crustum/NotificationUI',
-  'OpenRouter': 'https://github.com/crustum/openrouter',
-  'PluginManifest': 'https://github.com/skie/plugin-manifest',
-  'Rhythm': 'https://github.com/skie/rhythm',
-  'RocketChatNotification': 'https://github.com/Crustum/RocketchatNotification',
-  'RuleFlow': 'https://github.com/skie/rule-flow',
-  'Scheduling': 'https://github.com/skie/cakephp-scheduling',
-  'SevenNotification': 'https://github.com/Crustum/SevenNotification',
-  'SignalHandler': 'https://github.com/skie/signalhandler',
-  'SlackNotification': 'https://github.com/Crustum/SlackNotification',
-  'TelegramNotification': 'https://github.com/Crustum/TelegramNotification',
-  'Temporal': 'https://github.com/Crustum/cakephp-temporal',
-}
+// Load plugins metadata
+onMounted(async () => {
+  try {
+    const base = site.value.base
+    const metadataPath = `${base}plugins-metadata.json`.replace(/\/+/g, '/')
+    const response = await fetch(metadataPath)
+    if (response.ok) {
+      pluginsMetadata.value = await response.json()
+    }
+  } catch (error) {
+    console.warn('Could not load plugins metadata:', error)
+  }
+})
 
 const currentPluginName = computed(() => {
   const path = route.path
   const basePath = '/docs'
   const normalizedPath = basePath !== '/' ? path.replace(basePath.replace(/\/$/, ''), '') : path
 
-  for (const plugin in pluginRepos) {
-    if (normalizedPath.startsWith(`/${plugin}/`)) {
-      return plugin
+  // Find matching plugin from metadata
+  for (const plugin of pluginsMetadata.value) {
+    if (normalizedPath.startsWith(`/${plugin.name}/`) || normalizedPath === `/${plugin.name}`) {
+      return plugin.name
     }
   }
   return null
 })
 
 const currentPluginRepo = computed(() => {
-  return currentPluginName.value ? pluginRepos[currentPluginName.value] : null
+  if (!currentPluginName.value || pluginsMetadata.value.length === 0) {
+    return null
+  }
+  const plugin = pluginsMetadata.value.find(p => p.name === currentPluginName.value)
+  return plugin?.githubUrl || null
 })
 </script>
 
