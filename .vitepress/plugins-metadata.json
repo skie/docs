@@ -72,6 +72,14 @@
     "githubUrl": "https://github.com/skie/plugin-manifest"
   },
   {
+    "title": "PlumSearch Plugin",
+    "description": "Comprehensive search and filtering system for CakePHP applications. The plugin allows you to easily implement advanced search forms with various input types, autocomplete functionality, range filtering, and custom filter logic.",
+    "slug": "PlumSearch",
+    "path": "/PlumSearch/",
+    "name": "PlumSearch",
+    "githubUrl": "https://github.com/skie/cakephp-search"
+  },
+  {
     "title": "Rhythm Plugin",
     "description": "Real-time application performance monitoring for CakePHP applications with comprehensive metric collection, storage, and visualization.",
     "slug": "Rhythm",

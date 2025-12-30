@@ -129,6 +129,13 @@ export const pluginsConfig = [
     link: '/TelegramNotification/',
     name: 'TelegramNotification',
     githubUrl: 'https://github.com/Crustum/TelegramNotification'
+  },
+  {
+    title: 'PlumSearch Plugin',
+    details: 'Comprehensive search and filtering system for CakePHP applications. The plugin allows you to easily implement advanced search forms with various input types, autocomplete functionality, range filtering, and custom filter logic.',
+    link: '/PlumSearch/',
+    name: 'PlumSearch',
+    githubUrl: 'https://github.com/skie/cakephp-search'
   }
 ]
 
