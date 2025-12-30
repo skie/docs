@@ -137,6 +137,13 @@ const getPluginPath = (path) => {
   margin-bottom: 3rem;
 }
 
+@media (max-width: 768px) {
+  .plugins-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
 .plugin-card {
   background: var(--vp-c-bg-soft);
   border-radius: 8px;

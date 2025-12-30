@@ -220,6 +220,14 @@
 
 }
 
+/* On mobile, make plugins single column */
+@media (max-width: 768px) {
+    .home-plugins-column .VPFeatures .items {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
 /* GitHub-style Admonitions - Target VitePress custom blocks */
 .custom-block {
     margin: 1.5rem 0;
