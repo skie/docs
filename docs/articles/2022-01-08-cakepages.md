@@ -220,7 +220,7 @@ class ItemAdd
 ### Template: _templates/Items/add_.
 
 
-```php/3,7,12
+```php
 <?php
 /**
  * @var \App\View\AppView $this

@@ -238,9 +238,6 @@ export default defineConfig({
       setTimeout(processEdgeLabels, 2000);
     `]
     ],
-    rewrites: {
-        ':version/:slug*': ':version/:slug*'
-    },
     themeConfig: {
         logo: '/logo.svg',
         // start-sidebar
@@ -273,6 +270,15 @@ export default defineConfig({
                         "collapsed": false,
                         "items": [
                             { "text": "Home", "link": "/BroadcastingNotification/" }
+                        ]
+                    }
+                ],
+                "/Essentia/": [
+                    {
+                        "text": "Essentia",
+                        "collapsed": false,
+                        "items": [
+                            { "text": "Home", "link": "/Essentia/" }
                         ]
                     }
                 ],
@@ -487,6 +493,9 @@ export default defineConfig({
         }
     },
             vite: {
+                resolve: {
+                    preserveSymlinks: true
+                },
                 plugins: [
                     articlesPlugin(RECENT_ARTICLES_COUNT),
                     pluginsPlugin(RECENT_PLUGINS_COUNT)
@@ -503,6 +512,11 @@ export default defineConfig({
     },
     markdown: {
         lineNumbers: true,
+        languages: ['dotenv', 'yaml'],
+        languageAlias: {
+            env: 'dotenv',
+            neon: 'yaml'
+        },
         config: (md) => {
             md.use(versionReplacer)
 
