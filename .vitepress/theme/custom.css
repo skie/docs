@@ -436,3 +436,19 @@
 .custom-block ol:last-child {
     margin-bottom: 0;
 }
+/* Center Mermaid diagrams in article / doc content */
+.vp-doc .mermaid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.vp-doc .mermaid svg {
+    display: block;
+    margin-inline: auto;
+    max-width: 100%;
+    height: auto;
+}

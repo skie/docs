@@ -1,5 +1,22 @@
 [
   {
+    "title": "ADR, Architecture Tests, and StructArmed: Making Layer Rules Survive the Next PR.",
+    "date": "2026-08-07",
+    "description": "ADRs record why your layers exist; architecture tests keep those rules honest in CI. This article shows how StructArmed turns a CakePHP dependency DAG into an enforceable ruleset—and how a code graph helps you measure before you declare.",
+    "tags": [
+      "Architecture",
+      "ADR",
+      "Architecture Testing",
+      "StructArmed",
+      "CakePHP",
+      "PHP",
+      "Dependency Management"
+    ],
+    "slug": "2026-08-07-adr-architecture-tests-and-structarmed",
+    "path": "/articles/2026-08-07-adr-architecture-tests-and-structarmed",
+    "file": "2026-08-07-adr-architecture-tests-and-structarmed.md"
+  },
+  {
     "title": "Temporal: Building AI Agents with Durable Conversations",
     "date": "2025-12-21",
     "description": "Traditional AI agent implementations face a fundamental challenge: how do you maintain conversational state across long-running interactions? This article explores how to build production-ready AI agents using the Temporal plugin combined with the AIAgent framework, demonstrating how workflows orchestrate LLM interactions, manage tool execution, and coordinate multi-step conversations that can span hours or days.",

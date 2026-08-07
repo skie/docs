@@ -1,5 +1,22 @@
 [
   {
+    "title": "ADR, Architecture Tests, and StructArmed: Making Layer Rules Survive the Next PR.",
+    "date": "2026-08-07",
+    "description": "ADRs record why your layers exist; architecture tests keep those rules honest in CI. This article shows how StructArmed turns a CakePHP dependency DAG into an enforceable ruleset—and how a code graph helps you measure before you declare.",
+    "tags": [
+      "Architecture",
+      "ADR",
+      "Architecture Testing",
+      "StructArmed",
+      "CakePHP",
+      "PHP",
+      "Dependency Management"
+    ],
+    "slug": "2026-08-07-adr-architecture-tests-and-structarmed",
+    "path": "/articles/2026-08-07-adr-architecture-tests-and-structarmed",
+    "file": "2026-08-07-adr-architecture-tests-and-structarmed.md"
+  },
+  {
     "title": "Temporal: Building AI Agents with Durable Conversations",
     "date": "2025-12-21",
     "description": "Traditional AI agent implementations face a fundamental challenge: how do you maintain conversational state across long-running interactions? This article explores how to build production-ready AI agents using the Temporal plugin combined with the AIAgent framework, demonstrating how workflows orchestrate LLM interactions, manage tool execution, and coordinate multi-step conversations that can span hours or days.",
@@ -61,19 +78,5 @@
     "slug": "Railway Oriented Programming with PHP 8.5 Pipes - From Theory to Practice",
     "path": "/articles/Railway%20Oriented%20Programming%20with%20PHP%208.5%20Pipes%20-%20From%20Theory%20to%20Practice",
     "file": "Railway Oriented Programming with PHP 8.5 Pipes - From Theory to Practice.md"
-  },
-  {
-    "title": "PHP 8.5 Pipe Operator - A New Era of Readable Code",
-    "date": "2025-12-05",
-    "description": "The PHP 8.5 pipe operator brings a powerful new way to write clear, maintainable code. Drawing inspiration from functional programming languages and Unix command-line tools, this feature transforms how we chain operations and handle data flow in our applications.",
-    "tags": [
-      "PHP",
-      "PHP 8.5",
-      "Functional Programming",
-      "Code Quality"
-    ],
-    "slug": "PHP 8.5 Pipe Operator - A New Era of Readable Code",
-    "path": "/articles/PHP%208.5%20Pipe%20Operator%20-%20A%20New%20Era%20of%20Readable%20Code",
-    "file": "PHP 8.5 Pipe Operator - A New Era of Readable Code.md"
   }
 ]
