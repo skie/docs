@@ -1,5 +1,8 @@
 <template>
   <Layout>
+    <template #nav-bar-content-before>
+      <SidebarToggle />
+    </template>
     <template #nav-bar-content-after>
       <DynamicGitHubLink />
     </template>
@@ -27,6 +30,7 @@ import DynamicGitHubLink from './components/DynamicGitHubLink.vue'
 import ArticleNavigation from './components/ArticleNavigation.vue'
 import RecentArticles from './components/RecentArticles.vue'
 import RecentPlugins from './components/RecentPlugins.vue'
+import SidebarToggle from './components/SidebarToggle.vue'
 
 const { Layout } = DefaultTheme
 const route = useRoute()
